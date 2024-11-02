@@ -1,0 +1,630 @@
+/* Estilos gerais do corpo */
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* Background imitando o fundo do mar */
+  background: linear-gradient(to bottom, #0077be, #001f3f);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif; /* Aplicando Montserrat ao corpo */
+}
+
+/* Contêiner central */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Ocupa a altura total da viewport */
+}
+
+/* Novo contêiner para o título e a imagem */
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  position: relative;
+  margin-bottom: -10px; /* Ajuste para aproximar o subtítulo */
+}
+
+/* Estilos do título */
+.title {
+  font-size: 80px;
+  font-family: 'Pirata One', cursive;
+  text-align: center;
+  letter-spacing: 5px; /* Aumenta o espaçamento entre as letras */
+  background: linear-gradient(to right, #9cb6ff 0%, #5a78ff 50%, #9cb6ff 100%); /* Gradiente centralizado */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Para compatibilidade com outros navegadores */
+  text-fill-color: transparent;
+  margin: 0; /* Remove margens padrão */
+}
+
+
+/* Estilos do subtítulo */
+.subtitle {
+  font-size: 50px; /* Ajuste o tamanho conforme necessário */
+  margin-bottom: 20px;
+  margin-top: -10px; /* Aproxima o subtítulo do título */
+  font-family: 'Pirata One', cursive;
+  text-align: center;
+  letter-spacing: 5px;
+  background: linear-gradient(to right, #9cb6ff 0%, #5a78ff 50%, #9cb6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Estilos do formulário */
+.form {
+  width: 35vw; /* Aumentado para aumentar a largura do formulário */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 3vw 2vw;
+  background: rgba(11, 36, 71, 0.9); /* Fundo semi-transparente */
+  border-radius: 10px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: none; /* Removendo a inclinação */
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
+  align-items: center;
+}
+
+@keyframes form-animation {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos dos inputs */
+.input {
+  width: 100%;
+  padding: 1.5vw 1vw;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #3b8df2;
+  color: #fff;
+  font-size: 1.2vw;
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.input::placeholder {
+  color: #fff;
+  font-size: 1.2vw;
+}
+
+.input:hover,
+.input:focus {
+  border-color: #3b8df2;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+  outline: none;
+}
+
+/* Container para o campo de senha com tooltip */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container .tooltip {
+  display: none;
+  position: absolute;
+  top: -5px;
+  right: 105%;
+  width: 250px;
+  background-color: rgba(0, 0, 50, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9vw;
+  z-index: 1;
+}
+
+.password-container:hover .tooltip {
+  display: block;
+}
+
+/* Estilos do botão */
+button {
+  width: 100%;
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077be;
+  color: #fff;
+  font-size: 1.6vw;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  margin-top: 30px; /* Restaurando o espaço superior */
+}
+
+button:hover {
+  background-color: #005f8a;
+  font-size: 1.7vw;
+  transform: scale(1.05);
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+/* Estilos do texto de cadastro */
+.signup-text {
+  margin-top: 20px; /* Restaurando o espaço superior */
+  text-align: center;
+  color: #fff;
+  font-size: 1.2vw;
+}
+
+.signup-text a {
+  color: #3b8df2;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos das formas geométricas */
+.shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.5;
+}
+
+/* Triângulos */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  animation: colorChangeBorderSea 20s infinite;
+}
+
+/* Triângulos Existentes */
+.triangle1 {
+  border-bottom: 100px solid #0077be;
+  top: 10%;
+  left: 20%;
+  animation: move1 15s infinite alternate ease-in-out, colorChangeBorderSea 20s infinite;
+}
+
+.triangle2 {
+  border-bottom: 100px solid #00aaff;
+  top: 50%;
+  left: 80%;
+  animation: move2 17s infinite alternate-reverse ease-in-out, colorChangeBorderSea 20s infinite;
+}
+
+.triangle3 {
+  border-bottom: 100px solid #005f8a;
+  top: 25%;
+  left: 40%;
+  animation: move3 19s infinite alternate ease-in-out, colorChangeBorderSea 20s infinite;
+}
+
+/* Novos Triângulos */
+.triangle4 {
+  border-bottom: 100px solid #0077be;
+  top: 70%;
+  left: 60%;
+  animation: move10 21s infinite alternate-reverse ease-in-out, colorChangeBorderSea 20s infinite;
+}
+
+.triangle5 {
+  border-bottom: 100px solid #00aaff;
+  top: 40%;
+  left: 10%;
+  animation: move11 23s infinite alternate ease-in-out, colorChangeBorderSea 20s infinite;
+}
+
+.triangle6 {
+  border-bottom: 100px solid #005f8a;
+  top: 5%;
+  left: 80%;
+  animation: move12 25s infinite alternate-reverse ease-in-out, colorChangeBorderSea 20s infinite;
+}
+
+/* Quadrados */
+.square {
+  width: 80px;
+  height: 80px;
+  animation: colorChangeSea 20s infinite;
+}
+
+/* Quadrados Existentes */
+.square1 {
+  background-color: #0077be;
+  top: 30%;
+  left: 50%;
+  animation: move4 15s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
+}
+
+.square2 {
+  background-color: #00aaff;
+  top: 70%;
+  left: 10%;
+  animation: move5 17s infinite alternate ease-in-out, colorChangeSea 20s infinite;
+}
+
+.square3 {
+  background-color: #005f8a;
+  top: 15%;
+  left: 70%;
+  animation: move6 19s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
+}
+
+/* Novos Quadrados */
+.square4 {
+  background-color: #0077be;
+  top: 85%;
+  left: 20%;
+  animation: move16 22s infinite alternate ease-in-out, colorChangeSea 20s infinite;
+}
+
+.square5 {
+  background-color: #00aaff;
+  top: 10%;
+  left: 50%;
+  animation: move17 24s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
+}
+
+.square6 {
+  background-color: #005f8a;
+  top: 45%;
+  left: 75%;
+  animation: move18 26s infinite alternate ease-in-out, colorChangeSea 20s infinite;
+}
+
+/* Círculos */
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation: colorChangeSea 20s infinite;
+}
+
+/* Círculos Existentes */
+.circle1 {
+  background-color: #0077be;
+  top: 60%;
+  left: 70%;
+  animation: move7 15s infinite alternate ease-in-out, colorChangeSea 20s infinite;
+}
+
+.circle2 {
+  background-color: #00aaff;
+  top: 20%;
+  left: 40%;
+  animation: move8 17s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
+}
+
+.circle3 {
+  background-color: #005f8a;
+  top: 35%;
+  left: 15%;
+  animation: move9 19s infinite alternate ease-in-out, colorChangeSea 20s infinite;
+}
+
+/* Novos Círculos */
+.circle4 {
+  background-color: #0077be;
+  top: 55%;
+  left: 90%;
+  animation: move19 21s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
+}
+
+.circle5 {
+  background-color: #00aaff;
+  top: 65%;
+  left: 35%;
+  animation: move20 23s infinite alternate ease-in-out, colorChangeSea 20s infinite;
+}
+
+.circle6 {
+  background-color: #005f8a;
+  top: 15%;
+  left: 5%;
+  animation: move21 25s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
+}
+
+/* X-Shapes */
+.x-shape {
+  width: 80px;
+  height: 80px;
+  animation: colorChangeXSea 20s infinite;
+}
+
+.x-shape::before,
+.x-shape::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 10px;
+  background-color: currentColor;
+  top: 35px;
+  left: 0;
+}
+
+.x-shape::before {
+  transform: rotate(45deg);
+}
+
+.x-shape::after {
+  transform: rotate(-45deg);
+}
+
+/* X-Shapes Existentes */
+.x-shape1 {
+  top: 80%;
+  left: 30%;
+  animation: move13 16s infinite alternate-reverse ease-in-out, colorChangeXSea 20s infinite;
+}
+
+.x-shape2 {
+  top: 40%;
+  left: 60%;
+  animation: move14 18s infinite alternate ease-in-out, colorChangeXSea 20s infinite;
+}
+
+.x-shape3 {
+  top: 55%;
+  left: 25%;
+  animation: move15 20s infinite alternate-reverse ease-in-out, colorChangeXSea 20s infinite;
+}
+
+/* Novos X-Shapes */
+.x-shape4 {
+  top: 25%;
+  left: 85%;
+  animation: move22 22s infinite alternate ease-in-out, colorChangeXSea 20s infinite;
+}
+
+.x-shape5 {
+  top: 75%;
+  left: 55%;
+  animation: move23 24s infinite alternate-reverse ease-in-out, colorChangeXSea 20s infinite;
+}
+
+.x-shape6 {
+  top: 35%;
+  left: 5%;
+  animation: move24 26s infinite alternate ease-in-out, colorChangeXSea 20s infinite;
+}
+
+/* Animações de movimento */
+
+/* Triângulos */
+@keyframes move1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(20vw, 20vh) rotate(360deg); }
+}
+
+@keyframes move2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-25vw, -15vh) rotate(-360deg); }
+}
+
+@keyframes move3 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(15vw, -25vh) rotate(360deg); }
+}
+
+/* Novas Animações para Triângulos */
+@keyframes move10 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-20vw, 30vh) rotate(360deg); }
+}
+
+@keyframes move11 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(25vw, -30vh) rotate(-360deg); }
+}
+
+@keyframes move12 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-30vw, -20vh) rotate(360deg); }
+}
+
+/* Quadrados */
+@keyframes move4 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-30vw, 15vh) rotate(-360deg); }
+}
+
+@keyframes move5 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-15vw, 25vh) rotate(360deg); }
+}
+
+@keyframes move6 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30vw, -20vh) rotate(-360deg); }
+}
+
+/* Novas Animações para Quadrados */
+@keyframes move16 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(20vw, -15vh) rotate(360deg); }
+}
+
+@keyframes move17 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-25vw, 20vh) rotate(-360deg); }
+}
+
+@keyframes move18 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(15vw, 25vh) rotate(360deg); }
+}
+
+/* Círculos */
+@keyframes move7 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(25vw, -25vh) scale(1.5); }
+}
+
+@keyframes move8 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-20vw, 20vh) scale(0.5); }
+}
+
+@keyframes move9 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30vw, 15vh) scale(1.2); }
+}
+
+/* Novas Animações para Círculos */
+@keyframes move19 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-25vw, -25vh) scale(0.8); }
+}
+
+@keyframes move20 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(20vw, 20vh) scale(1.3); }
+}
+
+@keyframes move21 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-30vw, 15vh) scale(1.1); }
+}
+
+/* X-Shapes */
+@keyframes move13 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(25vw, 25vh) rotate(360deg); }
+}
+
+@keyframes move14 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-20vw, -20vh) rotate(-360deg); }
+}
+
+@keyframes move15 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30vw, -30vh) rotate(360deg); }
+}
+
+/* Novas Animações para X-Shapes */
+@keyframes move22 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-15vw, 25vh) rotate(-360deg); }
+}
+
+@keyframes move23 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(20vw, -25vh) rotate(360deg); }
+}
+
+@keyframes move24 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-25vw, -15vh) rotate(-360deg); }
+}
+
+/* Estilos para o pop-up de erro */
+.popup {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 50, 0.8); /* Fundo semi-transparente */
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  background-color: #0b2447;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #3b8df2;
+  width: 30%;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  animation: popup-animation 0.5s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+@keyframes popup-animation {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.popup-content h2 {
+  font-family: 'Pirata One', cursive;
+  margin-bottom: 20px;
+  font-size: 2vw;
+}
+
+.popup-content p {
+  font-size: 1.2vw;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .popup-content {
+    width: 80%;
+  }
+  .popup-content h2 {
+    font-size: 5vw;
+  }
+  .popup-content p {
+    font-size: 3vw;
+  }
+  .close-button {
+    font-size: 5vw;
+  }
+}
