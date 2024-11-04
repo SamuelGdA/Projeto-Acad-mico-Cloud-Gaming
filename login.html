@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pirate Pass - Login</title>
+  <!-- Importando as fontes do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Montserrat para o corpo, Pirata One para o título -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pirata+One&display=swap" rel="stylesheet">
+  <!-- Importando o arquivo CSS -->
+  <link rel="stylesheet" href="login/login.css">
+</head>
+<body>
+  <!-- Formas geométricas de fundo -->
+  <div class="shapes">
+    <!-- Triângulos -->
+    <div class="shape triangle triangle1"></div>
+    <div class="shape triangle triangle2"></div>
+    <div class="shape triangle triangle3"></div>
+    <div class="shape triangle triangle4"></div>
+    <div class="shape triangle triangle5"></div>
+    <div class="shape triangle triangle6"></div>
+    <!-- Quadrados -->
+    <div class="shape square square1"></div>
+    <div class="shape square square2"></div>
+    <div class="shape square square3"></div>
+    <div class="shape square square4"></div>
+    <div class="shape square square5"></div>
+    <div class="shape square square6"></div>
+    <!-- Círculos -->
+    <div class="shape circle circle1"></div>
+    <div class="shape circle circle2"></div>
+    <div class="shape circle circle3"></div>
+    <div class="shape circle circle4"></div>
+    <div class="shape circle circle5"></div>
+    <div class="shape circle circle6"></div>
+    <!-- X-Shapes -->
+    <div class="shape x-shape x-shape1"></div>
+    <div class="shape x-shape x-shape2"></div>
+    <div class="shape x-shape x-shape3"></div>
+    <div class="shape x-shape x-shape4"></div>
+    <div class="shape x-shape x-shape5"></div>
+    <div class="shape x-shape x-shape6"></div>
+  </div>
+
+  <!-- Contêiner para o conteúdo centralizado -->
+  <div class="container">
+    <!-- Formulário com o título dentro -->
+    <form class="form" id="formLogin">
+      <div class="title-container">
+        <h1 class="title">PIRATE PASS</h1>
+      </div>
+      <h2 class="subtitle">LOGIN</h2>
+      <input type="email" class="input" placeholder="Digite seu email" required>
+      <input type="password" class="input" id="senhaLogin" placeholder="Digite sua senha" required>
+      <button type="submit">Entrar</button>
+      <!-- Texto de cadastro -->
+      <p class="signup-text">
+        Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui!</a>
+      </p>
+    </form>
+  </div>
+
+  <!-- Pop-up de erro -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="closePopup" class="close-button">&times;</span>
+      <h2>Erro no Login</h2>
+      <p id="popupMessage"></p>
+    </div>
+  </div>
+
+  <!-- Importando o arquivo JavaScript externo -->
+  <script src="login/login.js"></script>
+</body>
+</html>

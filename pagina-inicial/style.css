@@ -1,0 +1,254 @@
+* {
+    margin: 0; /* Remove todas as margens padrão */
+    padding: 0; /* Remove todos os preenchimentos padrão */
+    box-sizing: border-box; /* Inclui padding e bordas na largura e altura total */
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #251202; /*Background padrão*/
+    color: white; /*Cor do texto padrão */
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Espaça os itens do cabeçalho */
+    align-items: center; /*Alinha verticalmente os itens */
+    background: linear-gradient(to top, #251202, #351903 120%);
+    height: 60px; /* Altura fixa */
+    border-bottom: 2px solid #3f301d; /* Borda inferior do cabeçalho */
+}
+
+header .logo {
+    display: flex;
+    align-items: center; /* Alinha o texto com a logo */
+}
+
+header .title {
+    margin-left: 10px; /* Espaço à esquerda do título */
+    font-size: 25px; /* Tamanho da fonte do título */
+    font-family: 'Pirata One'; /* Fonte específica para o título */
+    text-align: center; /* Centraliza o texto do título */
+    letter-spacing: 4px; /* Espaçamento entre letras */
+    cursor: default;
+    transition: 1s;
+}
+header .title:hover {
+    color: yellow;
+    text-shadow: 0 0 9px yellow;
+}
+
+header .logo img {
+    filter: grayscale(100%) brightness(0) invert(1); /* Aplica filtro à imagem do logo */
+    width: 50px; /* Largura fixa da imagem do logo */
+}
+
+.search-container {
+    display: flex; /* Exibe os itens em linha */
+    align-items: center; /* Centraliza verticalmente os itens */
+    margin-right: 20px; /* Espaço entre os ícones */
+}
+
+.search-container img{
+    filter: grayscale(100%) brightness(0) invert(1);
+}
+
+#search-bar {
+    padding: 10px; /* Aumenta o espaço interno da barra de pesquisa */
+    border: 1px solid #ccc; /* Cor da borda da barra */
+    border-radius: 5px; /* Cantos arredondados da barra */
+    width: 200px; /* Largura da barra de pesquisa */
+    transition: width 0.3s ease; /* Transição suave para a largura */
+    background-color: white; /* Cor de fundo da barra */
+    display: none; /* Inicialmente escondido */
+    z-index: 10; /* Certifique-se de que está acima de outros elementos */
+}
+
+
+/* Hero Section */
+.hero {
+    background-image: url('../img/hero-banner.png'); /* Imagem de fundo da seção hero */
+    background-size: cover; /* Cobre todo o espaço disponível */
+    background-position: center; /* Centraliza a imagem de fundo */
+    padding: 30px 0; /* Preenchimento na seção */
+    text-align: center; /* Centraliza o texto da seção */
+    border-bottom: 3px solid #3f301d; /* Borda inferior da seção */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Tamanho da fonte do título */
+    margin-bottom: 5px; /* Espaço abaixo do título */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Tamanho da fonte do parágrafo */
+    margin-bottom: 40px; /* Espaço abaixo do parágrafo */
+}
+
+.cta-buttons a {
+    padding: 15px 30px; /* Preenchimento dos botões de chamada para ação */
+    margin: 0 10px; /* Margem entre os botões */
+    border-radius: 5px; /* Cantos arredondados dos botões */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 1.2rem; /* Tamanho da fonte dos botões */
+}
+
+.btn-primary {
+    background-color: #e40909; /* Cor de fundo do botão primário */
+    color: white; /* Cor do texto do botão primário */
+}
+
+.btn-primary:hover {
+    background-color: #9c0000; /* Cor de fundo ao passar o mouse */
+    transition-duration: 0.4s; /* Duração da transição ao passar o mouse */
+}
+
+.btn-secondary {
+    background-color: transparent; /* Fundo transparente do botão secundário */
+    color: white; /* Cor do texto do botão secundário */
+    border: 2px solid white; /* Borda branca do botão secundário */
+}
+
+.btn-secondary:hover {
+    background-color: white; /* Cor de fundo ao passar o mouse */
+    color: #101010; /* Cor do texto ao passar o mouse */
+}
+
+/* Seção de Jogos em Destaque */
+.featured-games {
+    padding: 10px 0; /* Preenchimento na seção de jogos em destaque */
+    text-align: center; /* Centraliza o texto na seção */
+    background: linear-gradient(#0077b6, #03045e); /* Fundo em gradiente */
+}
+
+.featured-games h2 {
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    font-size: 2.5rem; /* Tamanho da fonte do título */
+}
+
+.carrossel-leme {
+    margin: 0 auto; /* Centraliza horizontalmente o leme */
+    width: 180px; /* Ajuste o tamanho do leme */
+    transition: transform 0.7s ease; /* Suaviza a rotação */
+    margin-top: -40px; /* Ajuste da posição superior do leme */
+}
+
+/* Seção de Jogos em Destaque - Carrossel */
+.carousel-container {
+    position: relative; /* Posiciona o carrossel de forma relativa */
+    width: 80%; /* Largura do carrossel */
+    margin: 0 auto; /* Centraliza horizontalmente o carrossel */
+    overflow: hidden; /* Oculta conteúdo que excede o contêiner */
+}
+
+.carousel {
+    display: flex; /* Flexbox para o carrossel */
+    transition: transform 0.5s ease-in-out; /* Suaviza a transição do movimento */
+}
+
+.carousel-slide {
+    min-width: 100%; /* Cada slide ocupa 100% do carrossel */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+    text-align: center; /* Centraliza o texto dentro do slide */
+    background-color: #101010; /* Cor de fundo dos slides */
+    border-radius: 10px; /* Cantos arredondados dos slides */
+    padding: 20px; /* Preenchimento interno dos slides */
+}
+
+.carousel-slide img {
+    width: 80%; /* Largura das imagens dentro dos slides */
+    border-radius: 10px; /* Cantos arredondados das imagens */
+}
+
+.carousel-slide h3 {
+    margin-top: 10px; /* Espaço acima do título do slide */
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute; /* Posicionamento absoluto para os botões de navegação */
+    top: 50%; /* Centraliza verticalmente os botões */
+    transform: translateY(-50%); /* Ajusta a posição para centralizar */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semi-transparente */
+    color: white; /* Cor do texto dos botões */
+    border: none; /* Remove a borda padrão */
+    padding: 10px; /* Preenchimento dos botões */
+    cursor: pointer; /* Cursor em forma de mão ao passar o mouse */
+    font-size: 2rem; /* Tamanho da fonte dos botões */
+    z-index: 1; /* Garante que os botões fiquem acima do carrossel */
+    border-radius: 5px; /* Cantos arredondados dos botões */
+}
+
+.prev-btn {
+    left: 0; /* Posiciona o botão anterior à esquerda */
+}
+
+.next-btn {
+    right: 0; /* Posiciona o botão seguinte à direita */
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Escurece ao passar o mouse */
+}
+
+.generos {
+    display: flex; /* Utiliza flexbox para a seção de gêneros */
+    justify-content: center; /* Centraliza horizontalmente os itens */
+    margin-top: 40px; /* Espaço acima da seção */
+    gap: 10px; /* Espaço entre os itens */
+    flex-wrap: wrap; /* Permite que os itens movam para uma nova linha em telas menores */
+}
+
+.generos img {
+    width: 300px; /* Tamanho padrão das imagens em telas grandes */
+    border-radius: 50px; /* Cantos arredondados das imagens */
+    transition: width 0.3s ease; /* Transição suave para a alteração do tamanho */
+}
+
+.all-games {
+    margin-top: 0px; /* Espaçamento acima da seção de todos os jogos */
+    text-align: center; /* Centraliza o texto na seção */
+    background-color: #03045e; /* Cor de fundo da seção */
+    padding: 20px; /* Adiciona um pouco de padding */
+}
+
+.all-games h2 {
+    font-size: 2rem; /* Tamanho da fonte do título da seção */
+    margin-bottom: 30px; /* Espaço abaixo do título */
+    color: white; /* Cor do texto do título */
+}
+
+.games-grid {
+    display: flex; /* Utiliza flexbox para a grade de jogos */
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+.game-item {
+    border-radius: 10px; /* Cantos arredondados dos itens de jogo */
+    max-width: 300px; /* Limite o tamanho do item do jogo */
+    text-align: center; /* Centraliza o texto dentro do item */
+}
+
+.game-item img {
+    width: 100%; /* Faz com que a imagem ocupe 100% do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 5px; /* Cantos arredondados das imagens dos itens de jogo */
+    margin-bottom: 10px; /* Espaço abaixo da imagem */
+}
+
+.game-item p {
+    font-size: 1rem; /* Tamanho da fonte da descrição do jogo */
+    color: #333; /* Cor do texto da descrição */
+    margin: 0; /* Remove margens padrão */
+}
+
+footer {
+    padding: 7px; /* Preenchimento do rodapé */
+    text-align: center; /* Centraliza o texto do rodapé */
+    background-color: #101010; /* Cor de fundo do rodapé */
+    font-size: 0.9rem; /* Tamanho da fonte do rodapé */
+    color: #bbb; /* Cor do texto do rodapé */
+}
