@@ -277,10 +277,14 @@ ul li.menu-item a .menu-icon i {
     margin-top: 20px;
     display: flex;
     gap: 10px;
+    overflow: hidden;
+}
+
+.amigos ul a {
+    width: 25%;
 }
 
 .amigos ul li {
-    width: 25%;
     background-color: #3f301d;
     display: flex;
     gap: 10px;
@@ -322,6 +326,7 @@ ul li.menu-item a .menu-icon i {
     padding-right: 50px;
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -372,7 +377,12 @@ ul li.menu-item a .menu-icon i {
     font-size: 0.9em;
 }
 
+.stars i {
+    color: yellow;
+}
+
 .dados-comentario p {
+    margin-top: 2px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.84em;
@@ -473,7 +483,7 @@ input {
     color: white;
 }
 
-.lista-amigos ul {
+.container-amigos ul {
     max-width: 90%;
     max-height: fit-content;
     margin: 10px auto;
@@ -482,7 +492,7 @@ input {
     gap: 10px;
 }
 
-.lista-amigos ul li {
+.container-amigos ul li {
     background-color: #3f301d;
     display: flex;
     gap: 10px;
@@ -492,14 +502,14 @@ input {
     cursor: pointer;
 }
 
-.lista-amigos ul li img {
+.container-amigos ul li img {
     width: 50px;
     border-radius: 25px;
     margin-left: 10px;
     border: 1px solid white;
 }
 
-.lista-amigos ul li div {
+.container-amigos ul li div {
     display: flex;
     flex-direction: column;
     gap: 5px;

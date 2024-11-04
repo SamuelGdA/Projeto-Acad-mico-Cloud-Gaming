@@ -29,7 +29,7 @@
             </div>
 
             <div class="foto-perfil">
-                <img src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
+                <img id="foto-usuario" src="" alt="">
                 <div class="editar-foto">
                     <i class="bi bi-pencil-square"></i>
                 </div>
@@ -37,11 +37,11 @@
 
             <div class="info-perfil">
                 <div class="nome-username">
-                    <span class="nome-usuario">Laliras</span>
-                    <span class="username-usuario">@laliras01</span>
+                    <span class="nome-usuario"></span>
+                    <span class="username-usuario"></span>
                 </div>
                 
-                <span class="plano">Capitão</span>
+                <span class="plano"></span>
             </div>
 
             <nav>
@@ -54,58 +54,25 @@
             </nav>
 
             <section class="jogos-favoritos" style="display: flex;">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
-                <img src="img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
+                <img src="../img/sub.jpg" alt="">
             </section>
 
             <section class="amigos" style="display: none;">
-                <ul>
-                    <li>
-                        <img src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
-                        <div>
-                            <span class="nome-amigo">Saimu</span>
-                            <span class="username-amigo">@saimuehu</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
-                        <div>
-                            <span class="nome-amigo">Saimu</span>
-                            <span class="username-amigo">@saimuehu</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
-                        <div>
-                            <span class="nome-amigo">Saimu</span>
-                            <span class="username-amigo">@saimuehu</span>
-                        </div>
-                    </li>
+                <ul id="aba-lista-amigos">
                 </ul>
             </section>
 
             <section class="avaliacoes" style="display: none;">
-                <ul>
-                    <li>
-                        <img src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
-                        <div class="dados-comentario">
-                            <div>
-                                <span class="nome-usuario">Laliras</span>
-                                <span class="username-usuario">@laliras01</span>
-                                <span class="jogo-relacionado">sobre Subway Surfers</span>
-                            </div>
-                            <span class="data-avaliacao">publicado em 12/03/2023</span>
-                            <p class="comentario">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                    </li>
+                <ul id="lista-avaliacoes">
                 </ul>
             </section>
 
@@ -156,34 +123,13 @@
             
         </section>
 
-        <aside class="lista-amigos">
+        <aside class="container-amigos">
             <span class="titulo-amigos">Amigos</span>
             <div class="input-box">
                 <i class="bi bi-search"></i>
                 <input type="text" placeholder="Pesquise pelo username">
             </div>
-            <ul>
-                <li>
-                    <img src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
-                    <div>
-                        <span class="nome-amigo">Saimu</span>
-                        <span class="username-amigo">@saimuehu</span>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
-                    <div>
-                        <span class="nome-amigo">Saimu</span>
-                        <span class="username-amigo">@saimuehu</span>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
-                    <div>
-                        <span class="nome-amigo">Saimu</span>
-                        <span class="username-amigo">@saimuehu</span>
-                    </div>
-                </li>
+            <ul id="lista-amigos">
             </ul>
         </aside>
 
@@ -233,5 +179,6 @@
     </nav>
 
     <script src="tela-perfil.js"></script>
+    <script src="tperfil-personalizacao.js"></script>
 </body>
 </html>
