@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Kanit:wght@300;400&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    min-height: 100%;
+    max-width: 100%;
+    background: linear-gradient(#0077b6, #03045e);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 60px;
+}
+ 
+/* Header */
+ 
+header {
+    background-color: #352315;
+    height: 8vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.conteudo {
+    min-height: 90vh;
+    padding-bottom: 25px;
+    position: absolute;
+    width: calc(100% - 6em);
+    margin-bottom: 2em;
+    top: 10vh;
+    left: 4.8em;
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.logo-e-nome {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    color: white;
+    padding-left: 15px;
+}
+ 
+.logo-e-nome img {
+    display:  flex;
+    filter: grayscale(100%) brightness(0) invert(1); /* Aplica filtro à imagem do logo */
+    width: 50px; /* Largura fixa da imagem do logo */
+}
+ 
+.logo-e-nome span {
+    font-size: 1.7em;
+    font-family: "Pirata One", system-ui;
+}
+ 
+.logx {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.2em;
+    color: white;
+    margin-left: auto;
+    margin-right: 20px;
+}
+ 
+/* Menu Lateral */
+ 
+.menu-lateral {
+    background-color: #3f301d;
+    width: 3.7em;
+    height: 92vh;
+    padding: 0 0 40px 5px;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 4px 0 0 #0077b6;
+}
+ 
+hr {
+    opacity: 50%;
+}
+ 
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+ 
+ul li.menu-item {
+    transition: .2s;
+    width: 3.7em;
+}
+ 
+ul li.menu-item:hover {
+    background: rgb(0 118 182 / 90%);
+    box-shadow: inset 0 2px 0px rgba(255, 255, 255, 0.688), inset -2px 0 0px rgba(255, 255, 255, 0.688), inset 0 -2px 0px rgba(255, 255, 255, 0.688);
+    width: 16em;
+}
+ 
+ 
+.txt-link {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    display: none;
+}
+ 
+ul li.menu-item:hover .txt-link {
+    display: block;
+    white-space: nowrap;
+}
+ 
+ul li.menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 20px 5px;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+ 
+.menu-icon {
+    padding: 5px;
+}
+ 
+ul li.menu-item a .menu-icon i {
+    font-size: 1.3em;
+}
+
+/* Container para os dispositivos */
+.dispositivos-container {
+    width: 90%;
+    min-height: 70vh;  /* Altura total da tela */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Centraliza o conteúdo verticalmente */
+    flex-direction: column;  /* Para que os itens fiquem empilhados verticalmente */
+    padding-top: 0vh;  /* Mesma altura que o cadastro, ajusta a parte superior */
+}
+
+
+
+
+/* Estilo do quadro de cadastro de dispositivos */
+.cadastro {
+    background-color: #352315;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+}
+
+/* Botão de cadastrar com espaçamento maior e efeito hover suave */
+.botao-cadastrar {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.2em;
+    padding: 12px 24px;
+    background-color: #1b0d01;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px;
+}
+
+.botao-cadastrar:hover {
+    transform: scale(1.05);
+}
+
+/* Título para a lista de dispositivos com espaçamento */
+.cadastro h3 {
+    margin-top: 15px;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.6em;
+    color: #ffffffdd;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Estilos individuais dos dispositivos com um cartão maior */
+.lista-dispositivos {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dispositivo {
+    background-color: #0076b69f;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.dispositivo:hover {
+    transform: translateY(-5px);
+    background-color: #0077b6;
+    transition: 0.5s;
+}
+
+.dispositivo p {
+    margin: 5px 0;
+    font-family: "Kanit", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dispositivo p i {
+    font-size: 1.2em; /* Ajuste de tamanho do ícone para combinar com o texto */
+    color: white;
+}

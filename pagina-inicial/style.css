@@ -6,6 +6,7 @@
 }
 
 body {
+    background: linear-gradient(#0077b6, #03045e);
     background-color: #251202; /*Background padrão*/
     color: white; /*Cor do texto padrão */
 }
@@ -35,7 +36,7 @@ header .title {
 }
 header .title:hover {
     color: yellow;
-    text-shadow: 0 0 9px yellow;
+    text-shadow: 0 0 7px yellow;
 }
 
 header .logo img {
@@ -67,6 +68,7 @@ header .logo img {
 
 /* Hero Section */
 .hero {
+    background-color: #251202; /*Background padrão*/
     background-image: url('../img/hero-banner.png'); /* Imagem de fundo da seção hero */
     background-size: cover; /* Cobre todo o espaço disponível */
     background-position: center; /* Centraliza a imagem de fundo */
@@ -94,13 +96,13 @@ header .logo img {
 }
 
 .btn-primary {
-    background-color: #e40909; /* Cor de fundo do botão primário */
+    background-color: #0077b6; /* Cor de fundo do botão primário */
     color: white; /* Cor do texto do botão primário */
 }
 
 .btn-primary:hover {
-    background-color: #9c0000; /* Cor de fundo ao passar o mouse */
-    transition-duration: 0.4s; /* Duração da transição ao passar o mouse */
+    background-color: #00a6ff; /* Cor de fundo ao passar o mouse */
+    transition-duration: 0.5s; /* Duração da transição ao passar o mouse */
 }
 
 .btn-secondary {

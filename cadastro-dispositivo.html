@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos</title>
+    <link rel="stylesheet" href="/cadastro-dispositivo/cadastro-d.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="popup" id="popup">
+        <p>Dispositivo cadastrado!</p>
+    </div>    
+    <header>
+        <div class="logo-e-nome">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Xbox">
+            </a>
+            <span>PASSE PIRATA</span>
+        </div>
+        <a class="logx" href="Log out">SAIR</a>
+    </header>
+    <div class="popup" id="popup">
+    <p>Dispositivo cadastrado!</p>
+</div>
+
+    <section class="conteudo">
+        <section class="cadastro-dispositivo-container">
+            <div class="cadastro-dispositivo">
+                <h2>Cadastre seu Dispositivo</h2>
+                <form class="form-cadastro">
+                    <div class="tipo-dispositivo">
+                        <label for="celular">
+                            <input type="radio" name="tipo" id="celular" value="celular" required>
+                            <i class="bi bi-phone-fill"></i> Celular
+                        </label>
+                        <label for="console">
+                            <input type="radio" name="tipo" id="console" value="console">
+                            <i class="bi bi-xbox"></i> Console
+                        </label>
+                        <label for="pc">
+                            <input type="radio" name="tipo" id="pc" value="pc">
+                            <i class="bi bi-pc-display"></i> PC
+                        </label>
+                    </div>
+        
+                    <div class="campo">
+                        <label for="nome-dispositivo">Nome do Dispositivo:</label>
+                        <input type="text" id="nome-dispositivo" name="nome-dispositivo" required>
+                    </div>
+        
+                    <div class="campo">
+                        <label for="id-dispositivo">ID do Dispositivo (6 caracteres):</label>
+                        <input type="text" id="id-dispositivo" name="id-dispositivo" maxlength="6" minlength="6" required>
+                    </div>
+        
+                    <button type="submit" class="botao-cadastrar">Cadastrar Dispositivo</button>
+                </form>
+            </div>
+        </section>        
+    </section>
+
+
+
+    <nav class="menu-lateral">
+        <ul>
+            <li class="menu-item">
+                <a href="#">
+                    <span class="menu-icon"><i class="bi bi-controller"></i></span>
+                    <span class="txt-link">Página Inicial</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="#">
+                    <span class="menu-icon"><i class="bi bi-person-circle"></i></span>
+                    <span class="txt-link">Meu Perfil</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="#">
+                    <span class="menu-icon"><i class="bi bi-people-fill"></i></span>
+                    <span class="txt-link">Amigos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="#">
+                    <span class="menu-icon"><i class="bi bi-gem"></i></span>
+                    <span class="txt-link">Planos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="#">
+                    <span class="menu-icon"><i class="bi bi-piggy-bank"></i></span>
+                    <span class="txt-link">Meus Pagamentos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script src="cadastro-dispositivo/cadastro-d.js"></script>
+</body>
+
+</html>
