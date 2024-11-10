@@ -1,0 +1,121 @@
+/* Estilos para o carrossel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 92%;
+    margin: 50px auto 0; /* Adiciona margem superior para separar do conteúdo acima */
+    margin-left: 100px;
+    background-color: #4B2E2E !important;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.carousel-slide {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.game-card {
+    flex: 1;
+    margin: 0 15px; /* Aumenta o espaçamento entre os jogos */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.game-card img {
+    width: 480px;
+    height: 300px; /* Aumenta a altura das imagens */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+    border-radius: 10px;
+}
+
+/* Efeito de hover nos jogos */
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+.game-card img:hover{
+    box-shadow: 0 0 20px gold;
+}
+
+
+.game-info {
+    margin-top: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.game-info h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.game-info p {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 15px;
+    z-index: 10; /* Aumentado para garantir que fique acima de outros elementos */
+}
+
+.nav.prev {
+    left: 3px;
+}
+
+.nav.next {
+    right: 3px;
+}
+
+.nav:focus {
+    outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex-wrap: wrap;
+    }
+
+    .game-card {
+        flex: 1 1 45%;
+        margin: 10px;
+    }
+
+    .game-card img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-card {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .game-card img {
+        height: 150px;
+    }
+}

@@ -7,108 +7,193 @@
     <title>Pirate Games</title>
     <link rel="icon" href="img/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <!-- Fontes e ícones -->
+    <!-- Incluindo as fontes Pirata One e Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="pagina-inicial/style.css">
+    <link rel="stylesheet" href="menu-lateral/menu.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Estilos do carrossel -->
+    <link rel="stylesheet" href="carousel.css">
 </head>
 
 <body>
     <!-- Cabeçalho com logo e navegação -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/logo.png" alt="Logo Xbox">
-            </a>
-            <h1 class="title">PIRATE PASS</h1>
-        </div>
-        <div class="search-container">
-            <input type="text" id="search-bar" placeholder="Pesquisar..." style="display: none;">
-            <a href="#" id="search-icon">
-                <img src="img/pesquisar.png" alt="Pesquisar" style="width: 30px; height: auto;"> <!-- Ajusta o tamanho do ícone -->
-            </a>
-        </div>
-        
-    </header>
+    <div class="conteudo">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Logo Xbox">
+                </a>
+                <h1 class="title">PIRATE PASS</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Pesquisar..." style="display: none;">
+                <a href="#" id="search-icon">
+                    <img src="img/pesquisar.png" alt="Pesquisar"
+                        style="width: 30px; height: auto;"> <!-- Ajusta o tamanho do ícone -->
+                </a>
+            </div>
+        </header>
 
-    <!-- Seção de boas vindas do site -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Comece nesse mundo de piratas🏴‍☠️</h1>
-            <p>Tenha acesso a vários jogos e se divirta</p>
-            <div class="cta-buttons">
-                <a href="cadastro.html" class="btn-primary">Comece a Jogar</a>
-            </div>
-        </div>
-    </section>
+        <nav class="menu-lateral">
+            <!-- Seu código existente para o menu lateral -->
+            <ul>
+                <li class="menu-item">
+                    <a href="index.html">
+                        <span class="menu-icon"><i class="bi bi-controller"></i></span>
+                        <span class="txt-link">Página Inicial</span>
+                    </a>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <a href="tela-perfil.html">
+                        <span class="menu-icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link">Meu Perfil</span>
+                    </a>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <a href="amigos.html">
+                        <span class="menu-icon"><i class="bi bi-people-fill"></i></span>
+                        <span class="txt-link">Amigos</span>
+                    </a>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <a href="planos.html">
+                        <span class="menu-icon"><i class="bi bi-gem"></i></span>
+                        <span class="txt-link">Planos</span>
+                    </a>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <a href="pagamentos.html">
+                        <span class="menu-icon"><i class="bi bi-piggy-bank"></i></span>
+                        <span class="txt-link">Meus Pagamentos</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-    <!-- Seção de jogos em destaque -->
-    <section class="featured-games">
-        <h2>Jogos com maior avaliação⭐</h2>
-        <img src="img/leme.png" alt="Leme de Barco" class="carrossel-leme" id="carrossel-leme" > <!-- Leme -->
-        <div class="carousel-container">
-            <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button> <!-- Botão para esquerda/ Passa o numero negativo para a função de girar o carrossel -->
-            <div class="carousel"> <!-- Carrossel -->
-                <div class="carousel-slide">
-                    <a href="#">
-                        <img src="img/game1.jpg" alt="Jogo 1">
-                    </a>
-                    <h3>Jogo 1</h3>
-                </div>
-                <div class="carousel-slide">
-                    <a href="#">
-                        <img src="img/game2.jpg" alt="Jogo 2">
-                    </a>
-                    <h3>Jogo 2</h3>
-                </div>
-                <div class="carousel-slide">
-                    <a href="#">
-                        <img src="img/game3.jpg" alt="Jogo 3">
-                    </a>
-                    <h3>Jogo 3</h3>
-                </div>
-                <div class="carousel-slide">
-                    <a href="#">
-                        <img src="img/game4.jpg" alt="Jogo 4">
-                    </a>
-                    <h3>Jogo 4</h3>
+        <!-- Seção de boas vindas do site -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Comece nesse mundo de piratas🏴‍☠️</h1>
+                <p>Tenha acesso a vários jogos e se divirta</p>
+                <div class="cta-buttons">
+                    <a href="cadastro.html" class="btn-primary">Comece a Jogar</a>
                 </div>
             </div>
-            <button class="next-btn" onclick="moveSlide(1)">&#10095;</button> <!-- Botão para direita/ Passa o numero positivo para a função de girar o carrossel -->
-        </div>
-        <!-- Gêneros -->
-        <div class="generos">
-            <a href="#"><img src="img/genero-map.png" alt="Aventura"></a>
-            <a href="#"><img src="img/genero-acao.png" alt="Ação"></a>
-            <a href="#"><img src="img/genero-rpg.png" alt="RPG"></a>
-            <a href="#"><img src="img/genero-pirata.png" alt="Pirata"></a>
-            <a href="#"><img src="img/genero-online.png" alt="Jogos Onlines"></a>
-        </div>
-    </section>
-    <!-- Seção com "TODOS OS JOGOS" -->
-    <section class="all-games">
-        <h2>Todos os Jogos</h2>
-        <div class="games-grid">
-            <div class="game-item">
-                <a href="#"><img src="img/game1.jpg" alt="Jogo 1"></a>
-            </div>
-            <div class="game-item">
-                <a href="#"><img src="img/game2.jpg" alt="Jogo 2"></a>
-            </div>
-            <div class="game-item">
-                <a href="#"><img src="img/game3.jpg" alt="Jogo 3"></a>
-            </div>
-            <div class="game-item">
-                <a href="#"><img src="img/game4.jpg" alt="Jogo 4"></a>
-            </div>
-            </div>
-    </section>
+        </section>
 
-<!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Pirate Games.</p>
-    </footer>
+        <!-- Seção de jogos em destaque -->
+        <section class="featured-games">
+            <h2>Jogos com maior avaliação⭐</h2>
+            <img src="img/leme.png" alt="Leme de Barco" class="carrossel-leme" id="carrossel-leme">
 
+            <!-- Carrossel adaptado -->
+            <div class="carousel">
+                <button class="nav prev">‹</button>
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <!-- Grupo de slides -->
+                        <li class="carousel-slide">
+                            <!-- Card do Jogo 1 -->
+                            <div class="game-card">
+                                <a href="link1.html"><img src="img/game1.jpg" alt="Jogo 1"></a>
+                                <div class="game-info">
+                                    <h3>Jogo 1</h3>
+                                    <p>Estúdio 1</p>
+                                </div>
+                            </div>
+                            <!-- Card do Jogo 2 -->
+                            <div class="game-card">
+                                <a href="link2.html"><img src="img/game2.jpg" alt="Jogo 2"></a>
+                                <div class="game-info">
+                                    <h3>Jogo 2</h3>
+                                    <p>Estúdio 2</p>
+                                </div>
+                            </div>
+                            <!-- Card do Jogo 3 -->
+                            <div class="game-card">
+                                <a href="link3.html"><img src="img/game3.jpg" alt="Jogo 3"></a>
+                                <div class="game-info">
+                                    <h3>Jogo 3</h3>
+                                    <p>Estúdio 3</p>
+                                </div>
+                            </div>
+                            <!-- Card do Jogo 4 -->
+                            <div class="game-card">
+                                <a href="link4.html"><img src="img/game4.jpg" alt="Jogo 4"></a>
+                                <div class="game-info">
+                                    <h3>Jogo 4</h3>
+                                    <p>Estúdio 4</p>
+                                </div>
+                            </div>
+                            <!-- Card do Jogo 5 -->
+                            <div class="game-card">
+                                <a href="link5.html"><img src="img/game5.jpg" alt="Jogo 5"></a>
+                                <div class="game-info">
+                                    <h3>Jogo 5</h3>
+                                    <p>Estúdio 5</p>
+                                </div>
+                            </div>
+                            <!-- Card do Jogo 6 -->
+                            <div class="game-card">
+                                <a href="link6.html"><img src="img/game6.jpg" alt="Jogo 6"></a>
+                                <div class="game-info">
+                                    <h3>Jogo 6</h3>
+                                    <p>Estúdio 6</p>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Adicione mais slides conforme necessário -->
+                    </ul>
+                </div>
+                <button class="nav next">›</button>
+            </div>
+
+            <!-- Gêneros -->
+            <div class="generos">
+                <a href="#"><img src="img/genero-map.png" alt="Aventura"></a>
+                <a href="#"><img src="img/genero-acao.png" alt="Ação"></a>
+                <a href="#"><img src="img/genero-rpg.png" alt="RPG"></a>
+                <a href="#"><img src="img/genero-pirata.png" alt="Pirata"></a>
+                <a href="#"><img src="img/genero-online.png" alt="Jogos Onlines"></a>
+            </div>
+        </section>
+
+        <!-- Seção com "TODOS OS JOGOS" -->
+        <section class="all-games">
+            <h2>Todos os Jogos</h2>
+            <div class="games-grid">
+                <div class="game-item">
+                    <a href="#"><img src="img/game1.jpg" alt="Jogo 1"></a>
+                </div>
+                <div class="game-item">
+                    <a href="#"><img src="img/game2.jpg" alt="Jogo 2"></a>
+                </div>
+                <div class="game-item">
+                    <a href="#"><img src="img/game3.jpg" alt="Jogo 3"></a>
+                </div>
+                <div class="game-item">
+                    <a href="#"><img src="img/game4.jpg" alt="Jogo 4"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; 2024 Pirate Games.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
     <script src="pagina-inicial/script.js"></script>
+    <!-- Script do carrossel -->
+    <script src="carousel.js"></script>
 </body>
 
 </html>

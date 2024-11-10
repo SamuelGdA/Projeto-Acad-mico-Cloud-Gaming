@@ -5,18 +5,18 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #251202; /*Background padrão*/
-    color: white; /*Cor do texto padrão */
+body{
+    color: white;
+    background: linear-gradient(#0077b6, #03045e); /* Fundo em gradiente */
 }
 
 header {
     display: flex;
     justify-content: space-between; /* Espaça os itens do cabeçalho */
     align-items: center; /*Alinha verticalmente os itens */
-    background: linear-gradient(to top, #251202, #351903 120%);
+    background: linear-gradient(to bottom, #251202, #2b1200 120%);
     height: 60px; /* Altura fixa */
-    border-bottom: 2px solid #3f301d; /* Borda inferior do cabeçalho */
+    border-bottom: 2px solid #070400; /* Borda inferior do cabeçalho */
 }
 
 header .logo {
@@ -67,22 +67,27 @@ header .logo img {
 
 /* Hero Section */
 .hero {
-    background-image: url('../img/hero-banner.png'); /* Imagem de fundo da seção hero */
-    background-size: cover; /* Cobre todo o espaço disponível */
-    background-position: center; /* Centraliza a imagem de fundo */
+    margin-left: 50px;
     padding: 30px 0; /* Preenchimento na seção */
     text-align: center; /* Centraliza o texto da seção */
-    border-bottom: 3px solid #3f301d; /* Borda inferior da seção */
+    border-bottom: 10px solid #000000; /* Borda inferior da seção */
+    border-radius: 100px;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse as bordas arredondadas */
+    background: linear-gradient(to bottom, #74381a, #271002);
 }
+
 
 .hero h1 {
     font-size: 3rem; /* Tamanho da fonte do título */
     margin-bottom: 5px; /* Espaço abaixo do título */
+    margin-top: 40px;
+    color: white;
 }
 
 .hero p {
     font-size: 1.5rem; /* Tamanho da fonte do parágrafo */
     margin-bottom: 40px; /* Espaço abaixo do parágrafo */
+    color: white;
 }
 
 .cta-buttons a {
@@ -94,12 +99,12 @@ header .logo img {
 }
 
 .btn-primary {
-    background-color: #e40909; /* Cor de fundo do botão primário */
+    background-color: rgb(1, 73, 156); /* Cor de fundo do botão primário */
     color: white; /* Cor do texto do botão primário */
 }
 
 .btn-primary:hover {
-    background-color: #9c0000; /* Cor de fundo ao passar o mouse */
+    background-color: #00076d; /* Cor de fundo ao passar o mouse */
     transition-duration: 0.4s; /* Duração da transição ao passar o mouse */
 }
 
@@ -118,7 +123,7 @@ header .logo img {
 .featured-games {
     padding: 10px 0; /* Preenchimento na seção de jogos em destaque */
     text-align: center; /* Centraliza o texto na seção */
-    background: linear-gradient(#0077b6, #03045e); /* Fundo em gradiente */
+    
 }
 
 .featured-games h2 {
@@ -131,14 +136,17 @@ header .logo img {
     width: 180px; /* Ajuste o tamanho do leme */
     transition: transform 0.7s ease; /* Suaviza a rotação */
     margin-top: -40px; /* Ajuste da posição superior do leme */
+    margin-bottom: -40px;
 }
 
 /* Seção de Jogos em Destaque - Carrossel */
 .carousel-container {
     position: relative; /* Posiciona o carrossel de forma relativa */
-    width: 80%; /* Largura do carrossel */
+    width: 70%; /* Largura ajustada para um visual mais compacto */
     margin: 0 auto; /* Centraliza horizontalmente o carrossel */
     overflow: hidden; /* Oculta conteúdo que excede o contêiner */
+    border-radius: 15px; /* Cantos arredondados no contêiner do carrossel */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave para destacar */
 }
 
 .carousel {
@@ -150,19 +158,47 @@ header .logo img {
     min-width: 100%; /* Cada slide ocupa 100% do carrossel */
     box-sizing: border-box; /* Inclui padding e bordas na largura total */
     text-align: center; /* Centraliza o texto dentro do slide */
-    background-color: #101010; /* Cor de fundo dos slides */
-    border-radius: 10px; /* Cantos arredondados dos slides */
+    background-color: #2a2a2a; /* Cor de fundo dos slides */
+    border-radius: 15px; /* Cantos arredondados dos slides */
     padding: 20px; /* Preenchimento interno dos slides */
 }
 
 .carousel-slide img {
-    width: 80%; /* Largura das imagens dentro dos slides */
+    width: 90%; /* Largura das imagens dentro dos slides */
     border-radius: 10px; /* Cantos arredondados das imagens */
 }
 
 .carousel-slide h3 {
     margin-top: 10px; /* Espaço acima do título do slide */
+    color: #fff; /* Cor do texto */
 }
+
+/* Estilo dos botões de navegação */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #fff; /* Cor do texto */
+    padding: 10px 15px; /* Espaçamento interno */
+    cursor: pointer;
+    border-radius: 50%; /* Botões arredondados */
+    font-size: 18px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro ao passar o mouse */
+}
+
+.carousel-button-prev {
+    left: 10px; /* Posição à esquerda */
+}
+
+.carousel-button-next {
+    right: 10px; /* Posição à direita */
+}
+
 
 .prev-btn,
 .next-btn {
@@ -209,7 +245,6 @@ header .logo img {
 .all-games {
     margin-top: 0px; /* Espaçamento acima da seção de todos os jogos */
     text-align: center; /* Centraliza o texto na seção */
-    background-color: #03045e; /* Cor de fundo da seção */
     padding: 20px; /* Adiciona um pouco de padding */
 }
 
