@@ -6,8 +6,9 @@
 }
 
 body{
-    color: white;
-    background: linear-gradient(#0077b6, #03045e); /* Fundo em gradiente */
+    background: linear-gradient(#0077b6, #03045e);
+    background-color: #251202; /*Background padrão*/
+    color: white; /*Cor do texto padrão */
 }
 
 header {
@@ -35,7 +36,7 @@ header .title {
 }
 header .title:hover {
     color: yellow;
-    text-shadow: 0 0 9px yellow;
+    text-shadow: 0 0 7px yellow;
 }
 
 header .logo img {
@@ -68,6 +69,10 @@ header .logo img {
 /* Hero Section */
 .hero {
     margin-left: 50px;
+    background-color: #251202; /*Background padrão*/
+    background-image: url('../img/hero-banner.png'); /* Imagem de fundo da seção hero */
+    background-size: cover; /* Cobre todo o espaço disponível */
+    background-position: center; /* Centraliza a imagem de fundo */
     padding: 30px 0; /* Preenchimento na seção */
     text-align: center; /* Centraliza o texto da seção */
     border-bottom: 10px solid #000000; /* Borda inferior da seção */
@@ -100,12 +105,15 @@ header .logo img {
 
 .btn-primary {
     background-color: rgb(1, 73, 156); /* Cor de fundo do botão primário */
+    background-color: #0077b6; /* Cor de fundo do botão primário */
     color: white; /* Cor do texto do botão primário */
 }
 
 .btn-primary:hover {
     background-color: #00076d; /* Cor de fundo ao passar o mouse */
     transition-duration: 0.4s; /* Duração da transição ao passar o mouse */
+    background-color: #00a6ff; /* Cor de fundo ao passar o mouse */
+    transition-duration: 0.5s; /* Duração da transição ao passar o mouse */
 }
 
 .btn-secondary {
