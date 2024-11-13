@@ -4,131 +4,138 @@
     <meta charset="UTF-8">
     <title>Planos de Assinatura</title>
     <!-- Link para as fontes -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pirata+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="planos/planos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="menu-lateral/menu.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="planos/planos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="pg-logo">
-            <img src="logo.png" alt="Logo">
-            <div class="pg-title">Pirate Games</div>
-        </div>
-        <div class="pg-search-container">
-            <!-- Conteúdo do cabeçalho se necessário -->
-        </div>
-    </header>
+    <!-- Contêiner principal para escopo -->
+    <div class="pg-container">
+        <!-- Cabeçalho -->
+        <header>
+            <div class="pg-logo">
+                <img src="logo.png" alt="Logo">
+                <div class="pg-title">Pirate Pass</div>
+            </div>
+            <div class="pg-search-container">
+                <!-- Conteúdo do cabeçalho se necessário -->
+            </div>
+        </header>
 
-    <nav class="menu-lateral">
-        <!-- Seu código existente para o menu lateral -->
-        <ul>
-            <li class="menu-item">
-                <a href="index.html">
-                    <span class="menu-icon"><i class="bi bi-controller"></i></span>
-                    <span class="txt-link">Página Inicial</span>
-                </a>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <a href="tela-perfil.html">
-                    <span class="menu-icon"><i class="bi bi-person-circle"></i></span>
-                    <span class="txt-link">Meu Perfil</span>
-                </a>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <a href="amigos.html">
-                    <span class="menu-icon"><i class="bi bi-people-fill"></i></span>
-                    <span class="txt-link">Amigos</span>
-                </a>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <a href="planos.html">
-                    <span class="menu-icon"><i class="bi bi-gem"></i></span>
-                    <span class="txt-link">Planos</span>
-                </a>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <a href="pagamentos.html">
-                    <span class="menu-icon"><i class="bi bi-piggy-bank"></i></span>
-                    <span class="txt-link">Meus Pagamentos</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Seção Hero -->
-    <div class="pg-hero">
-        <h1>Escolha o Seu Tesouro</h1>
-        <p>Desbrave os mares dos jogos com nossos planos exclusivos.</p>
-    </div>
-
-    <!-- Seção de Planos -->
-    <div class="pg-planos">
-        <div class="pg-plano" id="pg-plano-tripulante">
-            <h2>☠ Plano Tripulante</h2>
-            <p>Apenas R$19,99 por mês</p>
+        <!-- Menu Lateral -->
+        <nav class="menu-lateral">
+            <!-- Seu código existente para o menu lateral -->
             <ul>
-                <li>Acesso básico</li>
-                <li>Até 20 jogos disponíveis</li>
-                <li>Suporte limitado</li>
+                <li class="menu-item">
+                    <a href="index.html">
+                        <span class="menu-icon"><i class="bi bi-controller"></i></span>
+                        <span class="txt-link">Página Inicial</span>
+                    </a>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <a href="tela-perfil.html">
+                        <span class="menu-icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link">Meu Perfil</span>
+                    </a>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <a href="amigos.html">
+                        <span class="menu-icon"><i class="bi bi-people-fill"></i></span>
+                        <span class="txt-link">Amigos</span>
+                    </a>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <a href="planos.html">
+                        <span class="menu-icon"><i class="bi bi-gem"></i></span>
+                        <span class="txt-link">Planos</span>
+                    </a>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <a href="pagamentos.html">
+                        <span class="menu-icon"><i class="bi bi-piggy-bank"></i></span>
+                        <span class="txt-link">Meus Pagamentos</span>
+                    </a>
+                </li>
             </ul>
-            <button class="pg-btn-primary">Assine Agora</button>
+        </nav>
+
+        <!-- Seção Hero -->
+        <div class="pg-hero">
+            <h1>Escolha o Seu Tesouro</h1>
+            <p>Desbrave os mares dos jogos com nossos planos exclusivos.</p>
         </div>
-        <div class="pg-plano" id="pg-plano-imediato">
-            <h2>☠ Plano Imediato</h2>
-            <p>Apenas R$39,99 por mês</p>
-            <ul>
-                <li>Acesso a múltiplas plataformas</li>
-                <li>Até 100 jogos disponíveis</li>
-                <li>Suporte prioritário</li>
-            </ul>
-            <button class="pg-btn-primary">Assine Agora</button>
+
+        <!-- Seção de Planos -->
+        <div class="pg-planos">
+            <!-- Plano Tripulante -->
+            <div class="pg-plano" id="pg-plano-tripulante">
+                <h2>💀 Plano Tripulante</h2>
+                <p class="pg-preco">Apenas R$19,99 por mês</p>
+                <div class="pg-beneficios">
+                    <div class="pg-beneficio">Acesso básico</div>
+                    <div class="pg-beneficio">Até 20 jogos disponíveis</div>
+                    <div class="pg-beneficio">Suporte limitado</div>
+                </div>
+                <a href="pagamentos.html" class="pg-btn-primary">Assine Agora</a>
+            </div>
+            <!-- Plano Imediato -->
+            <div class="pg-plano pg-prata" id="pg-plano-imediato">
+                <h2>💀 Plano Imediato</h2>
+                <p class="pg-preco">Apenas R$39,99 por mês</p>
+                <div class="pg-beneficios">
+                    <div class="pg-beneficio">Acesso a múltiplas plataformas</div>
+                    <div class="pg-beneficio">Até 100 jogos disponíveis</div>
+                    <div class="pg-beneficio">Suporte prioritário</div>
+                </div>
+                <a href="pagamentos.html" class="pg-btn-primary">Assine Agora</a>
+            </div>
+            <!-- Plano Capitão -->
+            <div class="pg-plano pg-destaque" id="pg-plano-capitao">
+                <h2>💀 Plano Capitão</h2>
+                <p class="pg-preco">Apenas R$59,99 por mês</p>
+                <div class="pg-beneficios">
+                    <div class="pg-beneficio">Acesso total a todas as plataformas</div>
+                    <div class="pg-beneficio">Todos os jogos disponíveis</div>
+                    <div class="pg-beneficio">Suporte premium 24/7</div>
+                </div>
+                <a href="pagamentos.html" class="pg-btn-primary">Assine Agora</a>
+            </div>
         </div>
-        <div class="pg-plano pg-destaque" id="pg-plano-capitao">
-            <h2>☠ Plano Capitão</h2>
-            <p>Apenas R$59,99 por mês</p>
-            <ul>
-                <li>Acesso total a todas as plataformas</li>
-                <li>Todos os jogos disponíveis</li>
-                <li>Suporte premium 24/7</li>
-            </ul>
-            <button class="pg-btn-primary">Assine Agora</button>
+
+        <!-- Seção de Apresentação dos Planos -->
+        <div class="pg-apresentacao">
+            <!-- Apresentação do Plano Tripulante -->
+            <div class="pg-apresentacao-item">
+                <h2>Plano Tripulante</h2>
+                <p>Perfeito para iniciantes que querem explorar os mares dos jogos. Aproveite acesso básico a uma seleção especial de títulos.</p>
+                <img src="tripulante.jpg" alt="Imagem Plano Tripulante">
+            </div>
+
+            <!-- Apresentação do Plano Imediato -->
+            <div class="pg-apresentacao-item">
+                <h2>Plano Imediato</h2>
+                <p>Para os jogadores dedicados que desejam mais aventuras e desafios. Desbloqueie mais jogos e plataformas.</p>
+                <img src="imediato.jpg" alt="Imagem Plano Imediato">
+            </div>
+
+            <!-- Apresentação do Plano Capitão -->
+            <div class="pg-apresentacao-item">
+                <h2>Plano Capitão</h2>
+                <p>A experiência definitiva para os verdadeiros mestres dos mares. Acesse tudo o que temos a oferecer sem limites.</p>
+                <img src="capitao.jpg" alt="Imagem Plano Capitão">
+            </div>
         </div>
+
+        <!-- Rodapé -->
+        <footer>
+            &copy; 2023 Pirate Games. Todos os direitos reservados.
+        </footer>
     </div>
-
-    <!-- Seção de Apresentação dos Planos -->
-    <div class="pg-apresentacao">
-        <!-- Apresentação do Plano Tripulante -->
-        <div class="pg-apresentacao-item">
-            <h2>Plano Tripulante</h2>
-            <p>Perfeito para iniciantes que querem explorar os mares dos jogos. Aproveite acesso básico a uma seleção especial de títulos.</p>
-            <img src="tripulante.jpg" alt="Imagem Plano Tripulante">
-        </div>
-
-        <!-- Apresentação do Plano Imediato -->
-        <div class="pg-apresentacao-item">
-            <h2>Plano Imediato</h2>
-            <p>Para os jogadores dedicados que desejam mais aventuras e desafios. Desbloqueie mais jogos e plataformas.</p>
-            <img src="imediato.jpg" alt="Imagem Plano Imediato">
-        </div>
-
-        <!-- Apresentação do Plano Capitão -->
-        <div class="pg-apresentacao-item">
-            <h2>Plano Capitão</h2>
-            <p>A experiência definitiva para os verdadeiros mestres dos mares. Acesse tudo o que temos a oferecer sem limites.</p>
-            <img src="capitao.jpg" alt="Imagem Plano Capitão">
-        </div>
-    </div>
-
-    <!-- Rodapé -->
-    <footer>
-        &copy; 2023 Pirate Games. Todos os direitos reservados.
-    </footer>
 </body>
 </html>

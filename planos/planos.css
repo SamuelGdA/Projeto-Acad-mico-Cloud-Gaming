@@ -1,126 +1,129 @@
-/* Reset e fontes padrão */
-* {
+/* Reset e fontes padrão dentro do pg-container */
+.pg-container * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fontes */
-body {
-    background: linear-gradient(#0077b6, #03045e);
-    color: white;
-    scroll-behavior: smooth;
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.pg-container {
     font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.pg-container .pg-logo img {
+    filter: grayscale(100%) brightness(0) invert(1);
+    width: 50px;
 }
 
 /* Cabeçalho */
-header {
+.pg-container header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, #251202, #2b1200 120%);
+    background: linear-gradient(to bottom, #251202, #2b1200 120%); /* Fundo marrom original */
     height: 60px;
     border-bottom: 2px solid #070400;
 }
 
-header .pg-logo {
+.pg-container header .pg-logo {
     display: flex;
     align-items: center;
     margin-left: 20px;
 }
 
-header .pg-title {
+.pg-container header .pg-title {
     margin-left: 10px;
     font-size: 25px;
-    font-family: 'Pirata One', cursive;
     text-align: center;
     letter-spacing: 4px;
     cursor: default;
     transition: 1s;
+    font-family: 'Pirata One', cursive; /* Fonte Pirata */
 }
 
-header .pg-title:hover {
+.pg-container header .pg-title:hover {
     color: yellow;
     text-shadow: 0 0 7px yellow;
 }
 
-header .pg-logo img {
-    filter: grayscale(100%) brightness(0) invert(1);
-    width: 50px;
-}
-
 /* Seção Hero */
-.pg-hero {
-    background: linear-gradient(to bottom, #74381a, #271002);
+.pg-container .pg-hero {
+    background: linear-gradient(to bottom, #74381a, #271002); /* Fundo marrom original */
     padding: 60px 20px;
     text-align: center;
     border-bottom: 10px solid #000000;
-    border-radius: 0 0 100px 100px;
-    color: white;
 }
 
-.pg-hero h1 {
+.pg-container .pg-hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     font-family: 'Pirata One', cursive;
 }
 
-.pg-hero p {
+.pg-container .pg-hero p {
     font-size: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
 }
 
 /* Seção de Planos */
-.pg-planos {
+.pg-container .pg-planos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 50px 20px;
+
     gap: 20px;
+    padding: 50px 0;
+    background: linear-gradient(to bottom, #00aaff, #004477); /* Degradê azul */
 }
 
-.pg-plano {
-    background: linear-gradient(to bottom, #74381a, #271002);
+.pg-container .pg-plano {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.7);
     border: 2px solid #070400;
     border-radius: 15px;
-    width: 300px;
+    width: 350px; /* Largura aumentada */
     padding: 20px;
     text-align: center;
-    color: white;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.pg-plano:hover {
+.pg-container .pg-plano:hover {
     transform: scale(1.05);
 }
 
-.pg-plano h2 {
+.pg-container .pg-plano h2 {
     font-size: 32px;
     margin-bottom: 10px;
-    font-family: 'Pirata One', cursive;
+    font-family: 'Pirata One', cursive; /* Fonte Pirata */
 }
 
-.pg-plano p, .pg-plano ul li {
+.pg-container .pg-plano p,
+.pg-container .pg-plano .pg-beneficio {
     font-family: 'Montserrat', sans-serif;
 }
 
-.pg-plano p {
+.pg-container .pg-plano p {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.pg-plano ul {
-    list-style-type: none;
-    padding: 0;
+.pg-container .pg-beneficios {
     margin-bottom: 20px;
 }
 
-.pg-plano ul li {
+.pg-container .pg-beneficio {
     font-size: 18px;
     margin: 10px 0;
 }
 
-.pg-btn-primary {
+/* Botão Primário */
+.pg-container .pg-btn-primary {
+    margin-top: auto;
     padding: 15px 30px;
     background-color: #0077b6;
     color: white;
@@ -130,64 +133,74 @@ header .pg-logo img {
     display: inline-block;
     border: none;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
 }
 
-.pg-btn-primary:hover {
+.pg-container .pg-btn-primary:hover {
     background-color: #00a6ff;
     transition-duration: 0.5s;
 }
 
 /* Destaque no Plano Capitão */
-.pg-plano.pg-destaque:hover {
+.pg-container .pg-plano.pg-destaque:hover {
     box-shadow: 0 0 20px 5px yellow;
 }
 
-.pg-plano.pg-destaque {
+.pg-container .pg-plano.pg-destaque {
     border-color: #DAA520;
     box-shadow: 0 0 10px #DAA520;
 }
 
-.pg-plano.pg-destaque h2 {
+.pg-container .pg-plano.pg-destaque h2 {
     color: #DAA520;
 }
 
-/* Seção de Apresentação dos Planos */
-.pg-apresentacao {
-    background-color: #2b1200;
-    padding: 50px 20px;
-    color: white;
+/* Destaque no Plano Imediato */
+.pg-container .pg-plano.pg-prata:hover {
+    box-shadow: 0 0 20px 5px silver;
 }
 
-.pg-apresentacao-item {
+.pg-container .pg-plano.pg-prata {
+    border-color: silver;
+    box-shadow: 0 0 10px silver;
+}
+
+.pg-container .pg-plano.pg-prata h2 {
+    color: silver;
+}
+
+/* Seção de Apresentação dos Planos */
+.pg-container .pg-apresentacao {
+    background-color: #2b1200; /* Fundo marrom original */
+    padding: 50px 20px;
+}
+
+.pg-container .pg-apresentacao-item {
     margin-bottom: 50px;
     text-align: center;
 }
 
-.pg-apresentacao-item h2 {
+.pg-container .pg-apresentacao-item h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    font-family: 'Pirata One', cursive;
+    font-family: 'Pirata One', cursive; /* Fonte Pirata */
 }
 
-.pg-apresentacao-item p {
+.pg-container .pg-apresentacao-item p {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
 }
 
-.pg-apresentacao-item img {
+.pg-container .pg-apresentacao-item img {
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
 }
 
 /* Rodapé */
-footer {
+.pg-container footer {
     padding: 10px;
     text-align: center;
     background-color: #101010;
     font-size: 0.9rem;
     color: #bbb;
-    font-family: 'Montserrat', sans-serif;
 }
