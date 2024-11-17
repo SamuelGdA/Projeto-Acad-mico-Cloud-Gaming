@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar de Plano</title>
+    <link rel="stylesheet" href="pagamentos.css">
+</head>
+<body>
+    <header>
+        <div class="logo-e-nome">
+            <i class="bi bi-xbox"></i>
+            <span>PASSE PIRATA</span>
+        </div>
+        <a class="logx" href="Log out">SAIR</a>
+    </header>
+    <section class="conteudo">
+        <div class="trocar-plano-container">
+            <h2>Escolha o Plano</h2>
+            <select id="plano">
+                <option value="basico">Plano Básico - R$29,90</option>
+                <option value="premium">Plano Premium - R$49,90</option>
+            </select>
+            <h2>Forma de Pagamento</h2>
+            <select id="forma-pagamento">
+                <option value="pix">Pix</option>
+                <option value="boleto">Boleto</option>
+                <option value="cartao">Cartão de Crédito/Débito</option>
+            </select>
+            <button onclick="finalizarTroca()">Continuar</button>
+        </div>
+    </section>
+</body>
+</html>
