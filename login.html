@@ -45,16 +45,16 @@
     <div class="shape x-shape x-shape6"></div>
   </div>
 
-  <!-- Contêiner para o conteúdo centralizado -->
-  <div class="container">
+   <!-- Contêiner para o conteúdo centralizado -->
+   <div class="container">
     <!-- Formulário com o título dentro -->
     <form class="form" id="formLogin">
       <div class="title-container">
         <h1 class="title">PIRATE PASS</h1>
       </div>
       <h2 class="subtitle">LOGIN</h2>
-      <input type="email" class="input" placeholder="Digite seu email" required>
-      <input type="password" class="input" id="senhaLogin" placeholder="Digite sua senha" required>
+      <input type="text" id="identificador" class="input" placeholder="Digite seu nome de usuário" required>
+      <input type="password" id="senhaLogin" class="input" placeholder="Digite sua senha" required>
       <button type="submit">Entrar</button>
       <!-- Texto de cadastro -->
       <p class="signup-text">
@@ -67,7 +67,7 @@
   <div id="popup" class="popup">
     <div class="popup-content">
       <span id="closePopup" class="close-button">&times;</span>
-      <h2>Erro no Login</h2>
+      <h2 id="popupTitle">Erro no Login</h2>
       <p id="popupMessage"></p>
     </div>
   </div>

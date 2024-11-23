@@ -1,8 +1,31 @@
-document.getElementById('formCadastro').addEventListener('submit', function(event) {
-  event.preventDefault(); // Evita o envio do formulário
+// Selecionando elementos do DOM
+const form = document.getElementById('formCadastro');
+const popup = document.getElementById('popup');
+const closePopup = document.getElementById('closePopup');
+const popupTitle = document.getElementById('popupTitle');
+const popupMessage = document.getElementById('popupMessage');
 
-  // Obtém os valores dos campos
-  const email = document.querySelector('input[name="email"]').value;
+// Evento de fechamento do popup
+closePopup.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// Fecha o pop-up ao clicar fora dele
+window.addEventListener('click', function(event) {
+  if (event.target === popup) {
+    popup.style.display = 'none';
+  }
+});
+
+// Evento de submissão do formulário
+form.addEventListener('submit', async (event) => {
+  event.preventDefault(); // Impede o comportamento padrão do formulário
+
+  // Capturando os valores dos campos
+  const nome = document.getElementById('nome').value;
+  const identificador = document.getElementById('identificador').value;
+  const email = document.getElementById('email').value;
+  const dataNascimento = document.getElementById('dataNascimento').value;
   const senha = document.getElementById('senha').value;
   const confirmarSenha = document.getElementById('confirmarSenha').value;
 
@@ -27,25 +50,56 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
     mensagemErro += '• As senhas não coincidem.<br>';
   }
 
+  // Verifica se há erros de validação
   if (mensagemErro) {
     // Exibe o pop-up de erro
-    document.getElementById('popupMessage').innerHTML = mensagemErro;
-    document.getElementById('popup').style.display = 'block';
-  } else {
-    // Envia o formulário ou realiza outras ações
-    alert('Cadastro realizado com sucesso!');
-    // Aqui você pode redirecionar o usuário ou limpar o formulário
+    popupTitle.textContent = 'Erro no Cadastro';
+    popupMessage.innerHTML = mensagemErro;
+    popup.style.display = 'block';
+    return; // Interrompe o processamento para não enviar os dados
   }
-});
 
-// Fecha o pop-up ao clicar no "X"
-document.getElementById('closePopup').addEventListener('click', function() {
-  document.getElementById('popup').style.display = 'none';
-});
+  // Criando o objeto de dados para enviar
+  const dadosUsuario = {
+    nome: nome,
+    identificador: identificador,
+    senha: senha,
+    email: email,
+    data_nascimento: dataNascimento
+  };
 
-// Fecha o pop-up ao clicar fora dele
-window.addEventListener('click', function(event) {
-  if (event.target === document.getElementById('popup')) {
-    document.getElementById('popup').style.display = 'none';
+  try {
+    // Enviando a requisição POST para a API
+    const resposta = await fetch('Http://localhost:3000/usuarios/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dadosUsuario)
+    });
+
+    const resultado = await resposta.json();
+
+    if (resposta.ok) {
+      // Cadastro bem-sucedido
+      popupTitle.textContent = 'Cadastro Realizado';
+      popupMessage.textContent = 'Seu cadastro foi realizado com sucesso!';
+      popup.style.display = 'block';
+
+      // Redirecionar para a página de login após alguns segundos
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 3000);
+    } else {
+      // Erro no cadastro
+      popupTitle.textContent = 'Erro no Cadastro';
+      popupMessage.textContent = resultado.mensagem || 'Ocorreu um erro ao tentar cadastrar. Por favor, tente novamente.';
+      popup.style.display = 'block';
+    }
+  } catch (erro) {
+    console.error('Erro ao enviar requisição:', erro);
+    popupTitle.textContent = 'Erro no Cadastro';
+    popupMessage.textContent = 'Não foi possível conectar ao servidor. Por favor, tente novamente mais tarde.';
+    popup.style.display = 'block';
   }
 });

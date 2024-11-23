@@ -56,11 +56,11 @@ body {
 
 /* Formulário */
 .form {
-  width: 35vw;
+  width: 25vw; /* Reduzido de 35vw para 25vw */
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 3vw 2vw;
+  padding: 2vw 1.5vw; /* Ajustado para manter proporções */
   background: rgba(11, 36, 71, 0.9);
   border-radius: 10px;
   overflow: hidden;
@@ -75,26 +75,15 @@ body {
   align-items: center;
 }
 
-@keyframes form-animation {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 /* Inputs */
 .input {
   width: 100%;
-  padding: 1.5vw 1vw;
+  padding: 1vw 0.8vw; /* Ajustado para manter proporção */
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid #3b8df2;
   color: #fff;
-  font-size: 1.2vw;
+  font-size: 1vw; /* Reduzido de 1.2vw para 1vw */
   transition: all 0.3s ease-in-out;
   box-shadow:
     rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -104,7 +93,7 @@ body {
 
 .input::placeholder {
   color: #fff;
-  font-size: 1.2vw;
+  font-size: 1vw; /* Reduzido de 1.2vw para 1vw */
 }
 
 .input:hover,
@@ -119,12 +108,12 @@ body {
 /* Botão */
 button {
   width: 100%;
-  padding: 1vw 2vw;
+  padding: 0.8vw 1.5vw; /* Ajustado para manter proporção */
   border: none;
   border-radius: 5px;
   background-color: #0077be;
   color: #fff;
-  font-size: 1.6vw;
+  font-size: 1.4vw; /* Reduzido de 1.6vw para 1.4vw */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow:
@@ -136,7 +125,7 @@ button {
 
 button:hover {
   background-color: #005f8a;
-  font-size: 1.7vw;
+  font-size: 1.5vw; /* Ajustado para manter proporção */
   transform: scale(1.05);
   box-shadow:
     rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -149,7 +138,7 @@ button:hover {
   margin-top: 20px;
   text-align: center;
   color: #fff;
-  font-size: 1.2vw;
+  font-size: 1vw; /* Ajustado para manter proporção */
 }
 
 .signup-text a {
@@ -160,395 +149,6 @@ button:hover {
 .signup-text a:hover {
   text-decoration: underline;
 }
-
-/* Estilos das formas geométricas */
-.shapes {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.shape {
-  position: absolute;
-  opacity: 0.5;
-}
-
-/* Animação de mudança de cor */
-@keyframes colorChangeSea {
-  0%   { background-color: #0077be; }
-  33%  { background-color: #00aaff; }
-  66%  { background-color: #005f8a; }
-  100% { background-color: #0077be; }
-}
-
-@keyframes colorChangeBorderSea {
-  0%   { border-bottom-color: #0077be; }
-  33%  { border-bottom-color: #00aaff; }
-  66%  { border-bottom-color: #005f8a; }
-  100% { border-bottom-color: #0077be; }
-}
-
-@keyframes colorChangeXSea {
-  0%   { color: #0077be; }
-  33%  { color: #00aaff; }
-  66%  { color: #005f8a; }
-  100% { color: #0077be; }
-}
-
-/* Triângulos */
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  animation: colorChangeBorderSea 20s infinite;
-}
-
-/* Triângulos Existentes */
-.triangle1 {
-  border-bottom: 100px solid #0077be;
-  top: 10%;
-  left: 20%;
-  animation: move1 15s infinite alternate ease-in-out, colorChangeBorderSea 20s infinite;
-}
-
-.triangle2 {
-  border-bottom: 100px solid #00aaff;
-  top: 50%;
-  left: 80%;
-  animation: move2 17s infinite alternate-reverse ease-in-out, colorChangeBorderSea 20s infinite;
-}
-
-.triangle3 {
-  border-bottom: 100px solid #005f8a;
-  top: 25%;
-  left: 40%;
-  animation: move3 19s infinite alternate ease-in-out, colorChangeBorderSea 20s infinite;
-}
-
-/* Novos Triângulos */
-.triangle4 {
-  border-bottom: 100px solid #0077be;
-  top: 70%;
-  left: 60%;
-  animation: move10 21s infinite alternate-reverse ease-in-out, colorChangeBorderSea 20s infinite;
-}
-
-.triangle5 {
-  border-bottom: 100px solid #00aaff;
-  top: 40%;
-  left: 10%;
-  animation: move11 23s infinite alternate ease-in-out, colorChangeBorderSea 20s infinite;
-}
-
-.triangle6 {
-  border-bottom: 100px solid #005f8a;
-  top: 5%;
-  left: 80%;
-  animation: move12 25s infinite alternate-reverse ease-in-out, colorChangeBorderSea 20s infinite;
-}
-
-/* Quadrados */
-.square {
-  width: 80px;
-  height: 80px;
-  animation: colorChangeSea 20s infinite;
-}
-
-/* Quadrados Existentes */
-.square1 {
-  background-color: #0077be;
-  top: 30%;
-  left: 50%;
-  animation: move4 15s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
-}
-
-.square2 {
-  background-color: #00aaff;
-  top: 70%;
-  left: 10%;
-  animation: move5 17s infinite alternate ease-in-out, colorChangeSea 20s infinite;
-}
-
-.square3 {
-  background-color: #005f8a;
-  top: 15%;
-  left: 70%;
-  animation: move6 19s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
-}
-
-/* Novos Quadrados */
-.square4 {
-  background-color: #0077be;
-  top: 85%;
-  left: 20%;
-  animation: move16 22s infinite alternate ease-in-out, colorChangeSea 20s infinite;
-}
-
-.square5 {
-  background-color: #00aaff;
-  top: 10%;
-  left: 50%;
-  animation: move17 24s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
-}
-
-.square6 {
-  background-color: #005f8a;
-  top: 45%;
-  left: 75%;
-  animation: move18 26s infinite alternate ease-in-out, colorChangeSea 20s infinite;
-}
-
-/* Círculos */
-.circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  animation: colorChangeSea 20s infinite;
-}
-
-/* Círculos Existentes */
-.circle1 {
-  background-color: #0077be;
-  top: 60%;
-  left: 70%;
-  animation: move7 15s infinite alternate ease-in-out, colorChangeSea 20s infinite;
-}
-
-.circle2 {
-  background-color: #00aaff;
-  top: 20%;
-  left: 40%;
-  animation: move8 17s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
-}
-
-.circle3 {
-  background-color: #005f8a;
-  top: 35%;
-  left: 15%;
-  animation: move9 19s infinite alternate ease-in-out, colorChangeSea 20s infinite;
-}
-
-/* Novos Círculos */
-.circle4 {
-  background-color: #0077be;
-  top: 55%;
-  left: 90%;
-  animation: move19 21s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
-}
-
-.circle5 {
-  background-color: #00aaff;
-  top: 65%;
-  left: 35%;
-  animation: move20 23s infinite alternate ease-in-out, colorChangeSea 20s infinite;
-}
-
-.circle6 {
-  background-color: #005f8a;
-  top: 15%;
-  left: 5%;
-  animation: move21 25s infinite alternate-reverse ease-in-out, colorChangeSea 20s infinite;
-}
-
-/* X-Shapes */
-.x-shape {
-  width: 80px;
-  height: 80px;
-  animation: colorChangeXSea 20s infinite;
-}
-
-.x-shape::before,
-.x-shape::after {
-  content: '';
-  position: absolute;
-  width: 80px;
-  height: 10px;
-  background-color: currentColor;
-  top: 35px;
-  left: 0;
-}
-
-.x-shape::before {
-  transform: rotate(45deg);
-}
-
-.x-shape::after {
-  transform: rotate(-45deg);
-}
-
-/* X-Shapes Existentes */
-.x-shape1 {
-  top: 80%;
-  left: 30%;
-  animation: move13 16s infinite alternate-reverse ease-in-out, colorChangeXSea 20s infinite;
-}
-
-.x-shape2 {
-  top: 40%;
-  left: 60%;
-  animation: move14 18s infinite alternate ease-in-out, colorChangeXSea 20s infinite;
-}
-
-.x-shape3 {
-  top: 55%;
-  left: 25%;
-  animation: move15 20s infinite alternate-reverse ease-in-out, colorChangeXSea 20s infinite;
-}
-
-/* Novos X-Shapes */
-.x-shape4 {
-  top: 25%;
-  left: 85%;
-  animation: move22 22s infinite alternate ease-in-out, colorChangeXSea 20s infinite;
-}
-
-.x-shape5 {
-  top: 75%;
-  left: 55%;
-  animation: move23 24s infinite alternate-reverse ease-in-out, colorChangeXSea 20s infinite;
-}
-
-.x-shape6 {
-  top: 35%;
-  left: 5%;
-  animation: move24 26s infinite alternate ease-in-out, colorChangeXSea 20s infinite;
-}
-
-/* Animações de movimento */
-
-/* Triângulos */
-@keyframes move1 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(20vw, 20vh) rotate(360deg); }
-}
-
-@keyframes move2 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-25vw, -15vh) rotate(-360deg); }
-}
-
-@keyframes move3 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(15vw, -25vh) rotate(360deg); }
-}
-
-/* Novas Animações para Triângulos */
-@keyframes move10 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-20vw, 30vh) rotate(360deg); }
-}
-
-@keyframes move11 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(25vw, -30vh) rotate(-360deg); }
-}
-
-@keyframes move12 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-30vw, -20vh) rotate(360deg); }
-}
-
-/* Quadrados */
-@keyframes move4 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-30vw, 15vh) rotate(-360deg); }
-}
-
-@keyframes move5 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-15vw, 25vh) rotate(360deg); }
-}
-
-@keyframes move6 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(30vw, -20vh) rotate(-360deg); }
-}
-
-/* Novas Animações para Quadrados */
-@keyframes move16 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(20vw, -15vh) rotate(360deg); }
-}
-
-@keyframes move17 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-25vw, 20vh) rotate(-360deg); }
-}
-
-@keyframes move18 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(15vw, 25vh) rotate(360deg); }
-}
-
-/* Círculos */
-@keyframes move7 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(25vw, -25vh) scale(1.5); }
-}
-
-@keyframes move8 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-20vw, 20vh) scale(0.5); }
-}
-
-@keyframes move9 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(30vw, 15vh) scale(1.2); }
-}
-
-/* Novas Animações para Círculos */
-@keyframes move19 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-25vw, -25vh) scale(0.8); }
-}
-
-@keyframes move20 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(20vw, 20vh) scale(1.3); }
-}
-
-@keyframes move21 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-30vw, 15vh) scale(1.1); }
-}
-
-/* X-Shapes */
-@keyframes move13 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(25vw, 25vh) rotate(360deg); }
-}
-
-@keyframes move14 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-20vw, -20vh) rotate(-360deg); }
-}
-
-@keyframes move15 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(30vw, -30vh) rotate(360deg); }
-}
-
-/* Novas Animações para X-Shapes */
-@keyframes move22 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-15vw, 25vh) rotate(-360deg); }
-}
-
-@keyframes move23 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(20vw, -25vh) rotate(360deg); }
-}
-
-@keyframes move24 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-25vw, -15vh) rotate(-360deg); }
-}
-
 
 /* Pop-up de erro */
 .popup {
@@ -579,15 +179,14 @@ button:hover {
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-@keyframes popup-animation {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+.popup-content h2 {
+  font-family: 'Pirata One', cursive;
+  margin-bottom: 20px;
+  font-size: 2vw;
+}
+
+.popup-content p {
+  font-size: 1.2vw;
 }
 
 .close-button {
@@ -597,6 +196,46 @@ button:hover {
   color: #fff;
   font-size: 2vw;
   cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .form {
+    width: 90%; /* Aumentado para 90% */
+    padding: 4vw 2vw;
+  }
+  .title {
+    font-size: 8vw; /* Ajustado para melhor proporção */
+  }
+  .subtitle {
+    font-size: 6vw;
+  }
+  .input {
+    font-size: 3.5vw;
+    padding: 2.5vw 1.5vw;
+  }
+  .input::placeholder {
+    font-size: 3.5vw;
+  }
+  button {
+    font-size: 4.5vw;
+    padding: 2.5vw 1.5vw;
+  }
+  .signup-text {
+    font-size: 3.5vw;
+  }
+  .popup-content {
+    width: 80%;
+  }
+  .popup-content h2 {
+    font-size: 4.5vw;
+  }
+  .popup-content p {
+    font-size: 2.5vw;
+  }
+  .close-button {
+    font-size: 4.5vw;
+  }
 }
 
 .popup-content h2 {
