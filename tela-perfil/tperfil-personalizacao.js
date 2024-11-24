@@ -1,6 +1,12 @@
-// Dados do usuário para teste
+// Dados do usuário/url
 
-let idUsuario = 7
+const idUrl = parseInt(window.location.pathname.split('/').pop(), 10);
+
+if(idUsuario !== idUrl) {
+  document.getElementsByClassName('editar-foto')[0].style.display = 'none';
+  document.getElementsByClassName('nav-meus-dados')[0].style.display = 'none';
+  document.getElementsByClassName('meus-dados')[0].style.display = 'none';
+}
 
 // Buscar a foto de perfil do usuário
 
@@ -43,6 +49,8 @@ const getPlanoUsuario = async (id) => {
 
 // Buscar informações do usuário
 
+let dadosUsuario;
+
 const getInfoUsuario = async (id) => {
   try {
     const response = await fetch(`http://localhost:3000/usuarios/${id}`);
@@ -52,11 +60,24 @@ const getInfoUsuario = async (id) => {
 
     const usuario = await response.json();
 
+    dadosUsuario = usuario;
+
     console.log('Informações do Usuário:', usuario);
     
     // Já mostra a foto de perfil
-    const imgElement = document.getElementById('foto-usuario');
-    imgElement.src = await mostrarFotoPerfil(usuario.id);
+    const fotoPerfil = document.getElementById('foto-usuario');
+    fotoPerfil.src = await mostrarFotoPerfil(usuario.id);
+
+    // Põe os dados em "Meus Dados"
+    let nameValue = document.getElementsByClassName('name-value')[0];
+    let usernameValue = document.getElementsByClassName('username-value')[0];
+    let emailValue = document.getElementsByClassName('email-value')[0];
+    let dnValue = document.getElementsByClassName('dn-value')[0];
+
+    nameValue.textContent = usuario.nome;
+    usernameValue.textContent = usuario.identificador;
+    emailValue.textContent = usuario.email;
+    dnValue.textContent = formataData(usuario.data_nascimento)
     
     await getPlanoUsuario(usuario.id_plano)
 
@@ -70,6 +91,47 @@ const getInfoUsuario = async (id) => {
   }
 };
 
+// Buscar os jogos favoritos do usuário
+
+const getJogosFavoritos = async (id) => {
+  try {
+    const response = await fetch(`http://localhost:3000/jogos/favoritos/${id}`);
+    if (!response.ok) {
+      throw new Error('Erro ao buscar jogos favoritos.');
+    }
+    const jogos = await response.json();
+    console.log(jogos)
+
+    for (const jogo of jogos) {
+      const jogoId = jogo.jogo_id;
+      if (jogoId) {
+        const fotoResponse = await fetch(`http://localhost:3000/midias/foto/${jogoId}`);
+        if (!fotoResponse.ok) {
+          console.error('Erro ao buscar foto para o jogo:', jogo.nome_jogo);
+          continue;
+        }
+
+        const fotoBlob = await fotoResponse.blob();
+        const fotoUrl = URL.createObjectURL(fotoBlob);
+
+        // Criar a tag <img> com a foto
+        const imgElement = document.createElement('img');
+        imgElement.src = fotoUrl;
+        imgElement.alt = `Foto de ${jogo.nome_jogo}`;
+        imgElement.style.marginRight = '10px'; // Adicionar espaçamento entre as imagens
+
+        // Adicionar a imagem à seção de jogos favoritos
+        const jogosFavoritosSection = document.querySelector('.jogos-favoritos');
+        jogosFavoritosSection.appendChild(imgElement);
+      }
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+getJogosFavoritos(idUsuario);
+
 // Buscar as amizades do usuário
 
 const getAmizadesUsuario = async (id) => {
@@ -80,6 +142,9 @@ const getAmizadesUsuario = async (id) => {
     }
 
     const amizades = await response.json();
+
+    let numAmizades = document.getElementsByClassName('nav-amigos')[0]
+    numAmizades.textContent = numAmizades.textContent + ` (${amizades.length})`
 
     console.log('Informações das Amizades:', amizades);
     
@@ -119,6 +184,60 @@ const getAmizadesUsuario = async (id) => {
 getInfoUsuario(idUsuario); // aqui efetivamente se pega a foto e o plano
 getAmizadesUsuario(idUsuario);
 
+// Buscar um usuário entre os amigos do usuário logado
+
+const friendSearch = document.getElementById('friend-search');
+const btnPesquisarAmigo = document.getElementsByClassName('bi-search')[0];
+
+async function getAmigos(idUsuario) {
+  try {
+    const response = await fetch(`http://localhost:3000/amizades/${idUsuario}`);
+    const amigos = await response.json();
+    return amigos;
+  } catch (error) {
+    console.error('Erro ao buscar amigos:', error);
+    return [];
+  }
+}
+
+function pesquisarAmigos(amigos, pesquisaUsername) {
+  return amigos.filter(amigo => 
+    amigo.identificador.toLowerCase().includes(pesquisaUsername.toLowerCase())
+  );
+}
+
+async function buscarEFiltrarAmigos(idUsuario, pesquisaUsername) {
+  const amigos = await getAmigos(idUsuario);
+  const amigosFiltrados = pesquisarAmigos(amigos, pesquisaUsername);
+  console.log(amigosFiltrados);
+
+  const listaAmigos = document.getElementById('lista-amigos');
+
+  listaAmigos.innerHTML = '';
+
+  for (const amigo of amigosFiltrados) {
+      const amigoBox = document.createElement('a');
+      amigoBox.innerHTML = `
+          <li>
+              <img src="${await mostrarFotoPerfil(amigo.id)}" alt="Foto de perfil de ${amigo.nome}">
+              <div>
+                  <span class="nome-amigo">${amigo.nome}</span>
+                  <span class="username-amigo">@${amigo.identificador}</span>
+              </div>
+          </li>
+      `;
+      listaAmigos.appendChild(amigoBox);
+  }
+}
+
+btnPesquisarAmigo.addEventListener('click', async () => {
+  buscarEFiltrarAmigos(idUsuario, friendSearch.value);
+})
+
+friendSearch.addEventListener('input', () => {
+  buscarEFiltrarAmigos(idUsuario, friendSearch.value);
+})
+
 // Buscar avaliações
 
 function formataData(data) {
@@ -148,6 +267,9 @@ const getAvaliacoes = async (id) => {
       }
   
       const avaliacoes = await response.json();
+
+      let numAvaliacoes = document.getElementsByClassName('nav-avaliacoes')[0]
+      numAvaliacoes.textContent = numAvaliacoes.textContent + ` (${avaliacoes.length})`
   
       console.log('Informações de Avaliações:', avaliacoes);
       

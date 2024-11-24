@@ -52,8 +52,8 @@ header {
  
 .logo-e-nome img {
     display:  flex;
-    filter: grayscale(100%) brightness(0) invert(1); /* Aplica filtro à imagem do logo */
-    width: 50px; /* Largura fixa da imagem do logo */
+    filter: grayscale(100%) brightness(0) invert(1);
+    width: 50px;
 }
  
 .logo-e-nome span {
@@ -134,13 +134,13 @@ ul li.menu-item a .menu-icon i {
 /* Container para os dispositivos */
 .dispositivos-container {
     width: 90%;
-    min-height: 70vh;  /* Altura total da tela */
+    min-height: 70vh; 
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;  /* Centraliza o conteúdo verticalmente */
-    flex-direction: column;  /* Para que os itens fiquem empilhados verticalmente */
-    padding-top: 0vh;  /* Mesma altura que o cadastro, ajusta a parte superior */
+    align-items: center; 
+    flex-direction: column;  
+    padding-top: 0vh; 
 }
 
 
