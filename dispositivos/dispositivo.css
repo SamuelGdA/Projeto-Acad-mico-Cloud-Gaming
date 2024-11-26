@@ -17,7 +17,6 @@ body {
     margin-bottom: 60px;
 }
  
-/* Header */
  
 header {
     background-color: #352315;
@@ -52,8 +51,8 @@ header {
  
 .logo-e-nome img {
     display:  flex;
-    filter: grayscale(100%) brightness(0) invert(1); /* Aplica filtro à imagem do logo */
-    width: 50px; /* Largura fixa da imagem do logo */
+    filter: grayscale(100%) brightness(0) invert(1);
+    width: 50px;
 }
  
 .logo-e-nome span {
@@ -68,9 +67,7 @@ header {
     margin-left: auto;
     margin-right: 20px;
 }
- 
-/* Menu Lateral */
- 
+
 .menu-lateral {
     background-color: #3f301d;
     width: 3.7em;
@@ -131,22 +128,17 @@ ul li.menu-item a .menu-icon i {
     font-size: 1.3em;
 }
 
-/* Container para os dispositivos */
 .dispositivos-container {
     width: 90%;
-    min-height: 70vh;  /* Altura total da tela */
+    min-height: 70vh;
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;  /* Centraliza o conteúdo verticalmente */
-    flex-direction: column;  /* Para que os itens fiquem empilhados verticalmente */
-    padding-top: 0vh;  /* Mesma altura que o cadastro, ajusta a parte superior */
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0vh;
 }
 
-
-
-
-/* Estilo do quadro de cadastro de dispositivos */
 .cadastro {
     background-color: #352315;
     padding: 30px 40px;
@@ -158,7 +150,6 @@ ul li.menu-item a .menu-icon i {
     color: white;
 }
 
-/* Botão de cadastrar com espaçamento maior e efeito hover suave */
 .botao-cadastrar {
     font-family: "Kanit", sans-serif;
     font-size: 1.2em;
@@ -177,7 +168,6 @@ ul li.menu-item a .menu-icon i {
     transform: scale(1.05);
 }
 
-/* Título para a lista de dispositivos com espaçamento */
 .cadastro h3 {
     margin-top: 15px;
     font-family: "Kanit", sans-serif;
@@ -187,7 +177,6 @@ ul li.menu-item a .menu-icon i {
     margin-bottom: 25px;
 }
 
-/* Estilos individuais dos dispositivos com um cartão maior */
 .lista-dispositivos {
     margin-top: 20px;
     display: flex;
@@ -220,6 +209,6 @@ ul li.menu-item a .menu-icon i {
 }
 
 .dispositivo p i {
-    font-size: 1.2em; /* Ajuste de tamanho do ícone para combinar com o texto */
+    font-size: 1.2em;
     color: white;
 }

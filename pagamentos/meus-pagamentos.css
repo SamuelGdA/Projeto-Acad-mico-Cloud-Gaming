@@ -18,9 +18,7 @@ body {
     background-attachment: fixed;
     margin-bottom: 60px;
 }
- 
-/* Header */
- 
+
 header {
     background-color: #352315;
     height: 8vh;
@@ -52,8 +50,10 @@ header {
     padding-left: 15px;
 }
  
-.logo-e-nome i {
-    font-size: 1.7em;
+.logo-e-nome img {
+    display:  flex;
+    filter: grayscale(100%) brightness(0) invert(1);
+    width: 50px;
 }
  
 .logo-e-nome span {
@@ -68,9 +68,7 @@ header {
     margin-left: auto;
     margin-right: 20px;
 }
- 
-/* Menu Lateral */
- 
+
 .menu-lateral {
     background-color: #3f301d;
     width: 3.7em;
@@ -130,8 +128,7 @@ ul li.menu-item a {
 ul li.menu-item a .menu-icon i {
     font-size: 1.3em;
 }
-/* Conteúdo Principal */
-/* Estilo Geral */
+
 .conteudo {
     min-height: 0vh;
     padding: 20px;
@@ -149,7 +146,6 @@ ul li.menu-item a .menu-icon i {
     color: white;
 }
 
-/* Pagamentos */
 .pagamentos-container {
     display: flex;
     flex-direction: column;
@@ -162,7 +158,6 @@ h2, h3 {
     font-size: 1.5em;
 }
 
-/* Container dos cartões */
 .cartoes-container {
     display: flex;
     flex-wrap: wrap;
@@ -170,7 +165,6 @@ h2, h3 {
     justify-content: center;
 }
 
-/* Estilo do cartão */
 .cartao {
     width: 300px;
     height: 180px;
@@ -186,7 +180,6 @@ h2, h3 {
     position: relative;
 }
 
-/* Texto no cartão */
 .cartao .cartao-tipo {
     font-size: 1.2em;
     text-transform: uppercase;
@@ -214,7 +207,6 @@ h2, h3 {
     margin-top: 10px;
 }
 
-/* Botão de remover no cartão */
 .cartao .btn-remover {
     position: absolute;
     top: 10px;
@@ -232,7 +224,6 @@ h2, h3 {
     background-color: #a21d1d;
 }
 
-/* Formulário de Cadastro */
 .cadastrar-pagamento {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
@@ -283,7 +274,6 @@ h2, h3 {
     background-color: #005f9e;
 }
 
-/* Melhorias nos botões gerais */
 button[type="submit"], button[type="button"] {
     font-family: "Kanit", sans-serif;
     font-weight: bold;
@@ -294,31 +284,29 @@ form {
     flex-direction: column;
     gap: 15px;
 }
-/*cartao*/
-/* Estilo do cartão */
+
 .forma-pagamento {
-    width: 270px; /* Tamanho fixo do cartão */
-    height: 180px; /* Altura fixada para os cartões */
-    background: linear-gradient(135deg, #03045e, #0077b6); /* Gradiente para o cartão */
+    width: 270px;
+    height: 180px;
+    background: linear-gradient(135deg, #03045e, #0077b6);
     color: white;
     border-radius: 10px;
     padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombras para dar efeito de profundidade */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     font-family: "Kanit", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    box-sizing: border-box; /* Para garantir que o padding não ultrapasse a largura do cartão */
-    margin-bottom: 20px; /* Espaço entre os cartões */
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
-/* Botão de remover no cartão */
 .forma-pagamento .btn-remover {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #d62828; /* Cor vermelha do botão */
+    background-color: #d62828;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -329,37 +317,33 @@ form {
 }
 
 .forma-pagamento .btn-remover:hover {
-    background-color: #a21d1d; /* Cor mais escura quando passar o mouse */
+    background-color: #a21d1d;
 }
 
-/* Texto do tipo de cartão */
 .forma-pagamento .card-type {
     font-size: 1.2em;
-    text-transform: capitalize; /* Primeira letra maiúscula */
+    text-transform: capitalize;
     font-weight: bold;
-    margin-bottom: 10px; /* Espaço entre o tipo e o número do cartão */
+    margin-bottom: 10px;
 }
 
-/* Nome no cartão */
 .forma-pagamento .card-owner {
     font-size: 1em;
     margin-top: 10px;
     overflow: hidden;
-    text-overflow: ellipsis; /* Trunca texto se for maior do que o espaço disponível */
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-/* Número do cartão */
 .forma-pagamento .card-number {
     font-size: 1.1em;
     letter-spacing: 2px;
     margin-top: 10px;
     word-wrap: break-word;
-    font-family: monospace; /* Para garantir que os números fiquem alinhados */
+    font-family: monospace;
     white-space: nowrap;
 }
 
-/* Data de validade do cartão */
 .forma-pagamento .card-expiry {
     font-size: 0.9em;
     margin-top: 10px;
