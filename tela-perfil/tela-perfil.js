@@ -1,10 +1,4 @@
-const idUrl = parseInt(window.location.pathname.split('/').pop(), 10);
 
-if(idUsuario !== idUrl) {
-  document.getElementsByClassName('editar-foto')[0].style.display = 'none';
-  document.getElementsByClassName('nav-meus-dados')[0].style.display = 'none';
-  document.getElementsByClassName('meus-dados')[0].style.display = 'none';
-}
 
 // Navegação pelas páginas contidas no card-perfil
 
@@ -452,18 +446,15 @@ btnConcluirSenha.addEventListener('click', async () => {
 });
 
 function validaSenhaAtual(senha) {
-  if (senha.length < 8) {
-      mensagensErro[3].textContent = "A senha deve ter no mínimo 8 caracteres.";
-      return false;
-  }
   return senha;
 }
 
 function validaNovaSenha(senha) {
-  if (senha.length < 8) {
-      mensagensErro[4].textContent = "A nova senha deve ter 8 caracteres.";
-      return false;
-  }
+    const senhaRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{6,}$/;
+    if (!senhaRegex.test(senha)) {
+        mensagensErro[4].textContent = "A senha deve ter no mínimo 6 caracteres, uma letra maiúscula e um caractere especial.";
+        return false;
+    }
   return senha;
 }
 

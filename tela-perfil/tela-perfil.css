@@ -277,13 +277,14 @@ ul li.menu-item a .menu-icon i {
     padding-left: 50px;
     padding-right: 50px;
     margin-top: 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     overflow: hidden;
 }
 
 .amigos ul a {
-    width: 25%;
+    width: 100%;
 }
 
 .amigos ul li {

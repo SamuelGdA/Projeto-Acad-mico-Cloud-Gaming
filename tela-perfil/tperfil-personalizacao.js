@@ -1,11 +1,16 @@
-// Dados do usuário/url
+// Dados do usuário
+const idUsuarioLogado = 7
+let idUsuario = 7
 
-const idUrl = parseInt(window.location.pathname.split('/').pop(), 10);
-
-if(idUsuario !== idUrl) {
-  document.getElementsByClassName('editar-foto')[0].style.display = 'none';
-  document.getElementsByClassName('nav-meus-dados')[0].style.display = 'none';
-  document.getElementsByClassName('meus-dados')[0].style.display = 'none';
+function verificaUsuarioLogado() {
+  if(idUsuario !== idUsuarioLogado) {
+    document.getElementsByClassName('editar-foto')[0].style.display = 'none';
+    document.getElementsByClassName('nav-meus-dados')[0].style.display = 'none';
+    document.getElementsByClassName('mostra-dados')[0].style.display = 'none';
+  } else {
+    document.getElementsByClassName('editar-foto')[0].style.display = 'flex';
+    document.getElementsByClassName('nav-meus-dados')[0].style.display = 'inline';
+  }
 }
 
 // Buscar a foto de perfil do usuário
@@ -95,40 +100,46 @@ const getInfoUsuario = async (id) => {
 
 const getJogosFavoritos = async (id) => {
   try {
-    const response = await fetch(`http://localhost:3000/jogos/favoritos/${id}`);
-    if (!response.ok) {
-      throw new Error('Erro ao buscar jogos favoritos.');
-    }
-    const jogos = await response.json();
-    console.log(jogos)
-
-    for (const jogo of jogos) {
-      const jogoId = jogo.jogo_id;
-      if (jogoId) {
-        const fotoResponse = await fetch(`http://localhost:3000/midias/foto/${jogoId}`);
-        if (!fotoResponse.ok) {
-          console.error('Erro ao buscar foto para o jogo:', jogo.nome_jogo);
-          continue;
-        }
-
-        const fotoBlob = await fotoResponse.blob();
-        const fotoUrl = URL.createObjectURL(fotoBlob);
-
-        // Criar a tag <img> com a foto
-        const imgElement = document.createElement('img');
-        imgElement.src = fotoUrl;
-        imgElement.alt = `Foto de ${jogo.nome_jogo}`;
-        imgElement.style.marginRight = '10px'; // Adicionar espaçamento entre as imagens
-
-        // Adicionar a imagem à seção de jogos favoritos
-        const jogosFavoritosSection = document.querySelector('.jogos-favoritos');
-        jogosFavoritosSection.appendChild(imgElement);
+      const response = await fetch(`http://localhost:3000/jogos/favoritos/${id}`);
+      if (!response.ok) {
+          throw new Error('Erro ao buscar jogos favoritos.');
       }
-    }
+
+      const jogos = await response.json();
+      console.log(jogos);
+
+      const jogosFavoritosSection = document.querySelector('.jogos-favoritos');
+
+      // Limpar jogos favoritos
+      clearContainer(jogosFavoritosSection);
+
+      for (const jogo of jogos) {
+          const jogoId = jogo.jogo_id;
+          if (jogoId) {
+              const fotoResponse = await fetch(`http://localhost:3000/midias/foto/${jogoId}`);
+              if (!fotoResponse.ok) {
+                  console.error('Erro ao buscar foto para o jogo:', jogo.nome_jogo);
+                  continue;
+              }
+
+              const fotoBlob = await fotoResponse.blob();
+              const fotoUrl = URL.createObjectURL(fotoBlob);
+
+              // Criar a tag <img> com a foto
+              const imgElement = document.createElement('img');
+              imgElement.src = fotoUrl;
+              imgElement.alt = `Foto de ${jogo.nome_jogo}`;
+              imgElement.style.marginRight = '10px';
+
+              // Adicionar a imagem à seção
+              jogosFavoritosSection.appendChild(imgElement);
+          }
+      }
   } catch (error) {
-    console.error(error);
+      console.error(error);
   }
 };
+
 
 getJogosFavoritos(idUsuario);
 
@@ -136,50 +147,55 @@ getJogosFavoritos(idUsuario);
 
 const getAmizadesUsuario = async (id) => {
   try {
-    const response = await fetch(`http://localhost:3000/amizades/${id}`);
-    if (!response.ok) {
-      throw new Error('Erro ao buscar amizades.');
-    }
+      const response = await fetch(`http://localhost:3000/amizades/${id}`);
+      if (!response.ok) {
+          throw new Error('Erro ao buscar amizades.');
+      }
 
-    const amizades = await response.json();
+      const amizades = await response.json();
 
-    let numAmizades = document.getElementsByClassName('nav-amigos')[0]
-    numAmizades.textContent = numAmizades.textContent + ` (${amizades.length})`
+      let numAmizades = document.getElementsByClassName('nav-amigos')[0];
+      numAmizades.textContent = `Amigos (${amizades.length})`;
 
-    console.log('Informações das Amizades:', amizades);
-    
-    const listaAmigos = document.getElementById('lista-amigos');
-    const abaListaAmigos = document.getElementById('aba-lista-amigos')
+      console.log('Informações das Amizades:', amizades);
 
-    for(const amizade of amizades) {
-      // Adiciona os amigos no aside
-      const linkAmigo = document.createElement('a');
-      linkAmigo.innerHTML = `<li>
-                        <img src="${await mostrarFotoPerfil(amizade.id)}" alt="Foto de perfil de ${amizade.nome}">
-                        <div>
-                            <span class="nome-amigo">${amizade.nome}</span>
-                            <span class="username-amigo">@${amizade.identificador}</span>
-                        </div>
-                    </li>`
-      listaAmigos.appendChild(linkAmigo)
+      const listaAmigos = document.getElementById('lista-amigos');
+      const abaListaAmigos = document.getElementById('aba-lista-amigos');
 
-      // Adiciona os amigos na aba do perfil
-      const abaLinkAmigo = document.createElement('a');
-      abaLinkAmigo.innerHTML = `<li>
-                        <img src="${await mostrarFotoPerfil(amizade.id)}" alt="Foto de perfil de ${amizade.nome}">
-                        <div>
-                            <span class="nome-amigo">${amizade.nome}</span>
-                            <span class="username-amigo">@${amizade.identificador}</span>
-                        </div>
-                    </li>`
+      // Limpar listas antes de adicionar
+      clearContainer(listaAmigos);
+      clearContainer(abaListaAmigos);
 
-      abaListaAmigos.appendChild(abaLinkAmigo)
-    }
+      for (const amizade of amizades) {
+          const linkAmigo = document.createElement('a');
+          linkAmigo.innerHTML = `<li>
+              <img src="${await mostrarFotoPerfil(amizade.id)}" alt="Foto de perfil de ${amizade.nome}">
+              <div>
+                  <span class="nome-amigo">${amizade.nome}</span>
+                  <span class="username-amigo">@${amizade.identificador}</span>
+              </div>
+          </li>`;
+          linkAmigo.addEventListener('click', () => {
+              idUsuario = amizade.id;
+              verificaUsuarioLogado()
+              carregarPerfil(amizade.id); 
+          });
+          listaAmigos.appendChild(linkAmigo);
 
+          const abaLinkAmigo = document.createElement('a');
+          abaLinkAmigo.innerHTML = linkAmigo.innerHTML;
+          abaLinkAmigo.addEventListener('click', () => {
+              idUsuario = amizade.id;
+              verificaUsuarioLogado()
+              carregarPerfil(amizade.id);
+          });
+          abaListaAmigos.appendChild(abaLinkAmigo);
+      }
   } catch (error) {
-    console.error(error);
+      console.error(error);
   }
 };
+
 
 getInfoUsuario(idUsuario); // aqui efetivamente se pega a foto e o plano
 getAmizadesUsuario(idUsuario);
@@ -260,43 +276,41 @@ function countingStars(nota) {
 };
 
 const getAvaliacoes = async (id) => {
-    try {
+  try {
       const response = await fetch(`http://localhost:3000/avaliacoes/usuario/${id}`);
       if (!response.ok) {
-        throw new Error('Erro ao buscar avaliações.');
+          throw new Error('Erro ao buscar avaliações.');
       }
-  
+
       const avaliacoes = await response.json();
-
-      let numAvaliacoes = document.getElementsByClassName('nav-avaliacoes')[0]
-      numAvaliacoes.textContent = numAvaliacoes.textContent + ` (${avaliacoes.length})`
-  
       console.log('Informações de Avaliações:', avaliacoes);
-      
-      for(const avaliacao of avaliacoes) {
-        const dataFormatada = formataData(avaliacao.data_avaliacao)
 
-        const listaAvaliacoes = document.getElementById('lista-avaliacoes')
-        const itemAvaliacao = document.createElement('li');
+      const listaAvaliacoes = document.getElementById('lista-avaliacoes');
+      clearContainer(listaAvaliacoes);
 
-        itemAvaliacao.innerHTML = `<img src="${await mostrarFotoPerfil(idUsuario)}" alt="">
-                        <div class="dados-comentario">
-                            <div>
-                                <span class="nome-usuario">${avaliacao.nome_usuario}</span>
-                                <span class="username-usuario">@${avaliacao.identificador_usuario}</span>
-                                <span class="jogo-relacionado">sobre ${avaliacao.nome_jogo}</span>
-                            </div>
-                            <span class="data-avaliacao">publicado em ${dataFormatada}</span>
-                            <div class="stars">${countingStars(avaliacao.nota)}</div>
-                            <p class="comentario">${avaliacao.comentario}</p>`
+      for (const avaliacao of avaliacoes) {
+          const dataFormatada = formataData(avaliacao.data_avaliacao);
 
-        listaAvaliacoes.appendChild(itemAvaliacao);
+          const itemAvaliacao = document.createElement('li');
+          itemAvaliacao.innerHTML = `
+              <img src="${await mostrarFotoPerfil(idUsuario)}" alt="">
+              <div class="dados-comentario">
+                  <div>
+                      <span class="nome-usuario">${avaliacao.nome_usuario}</span>
+                      <span class="username-usuario">@${avaliacao.identificador_usuario}</span>
+                      <span class="jogo-relacionado">sobre ${avaliacao.nome_jogo}</span>
+                  </div>
+                  <span class="data-avaliacao">publicado em ${dataFormatada}</span>
+                  <div class="stars">${countingStars(avaliacao.nota)}</div>
+                  <p class="comentario">${avaliacao.comentario}</p>
+              </div>`;
+          listaAvaliacoes.appendChild(itemAvaliacao);
       }
-  
-    } catch (error) {
+  } catch (error) {
       console.error(error);
-    }
+  }
 };
+
 
 getAvaliacoes(idUsuario)
 
@@ -331,4 +345,23 @@ async function uploadFile() {
     } catch (err) {
       console.error('Erro ao enviar a imagem:', err);
     }
+};
+
+// Reset na página (pra gambiarra)
+
+const clearContainer = (container) => {
+  while (container.firstChild) {
+      container.removeChild(container.firstChild);
+  }
+};
+
+const carregarPerfil = async (id) => {
+  clearContainer(document.querySelector('.jogos-favoritos'));
+  clearContainer(document.getElementById('lista-amigos'));
+  clearContainer(document.getElementById('lista-avaliacoes'));
+
+  await getInfoUsuario(id);
+  await getJogosFavoritos(id);
+  await getAmizadesUsuario(id);
+  await getAvaliacoes(id);
 };

@@ -1,4 +1,4 @@
-
+idUsuario = 7;
 
 const mostrarFotoPerfil = async (id) => {
     try {
@@ -39,15 +39,18 @@ async function pesquisaNoBanco() {
             console.log('Informações dos Usuários:', usuarios);
     
             for(const usuario of usuarios) {
-                const usuarioBox = document.createElement('li');
-                usuarioBox.innerHTML = `<div class="l-adicionar">
+                const usuarioBox = document.createElement('a');
+                usuarioBox.href = `/tela-perfil.html?id=${usuario.id}`;
+                usuarioBox.innerHTML = `<li>
+                                        <div class="l-adicionar">
                                           <img src="${await mostrarFotoPerfil(usuario.id)}" alt="">
                                           <div>
                                             <span class="nome-usuario">${usuario.nome}</span>
                                             <span class="username-usuario">@${usuario.identificador}</span>
                                           </div>
                                         </div>
-                                        <i class="bi bi-person-fill-add adicionar" data-id="${usuario.id}"></i>`;
+                                        <i class="bi bi-person-fill-add adicionar" data-id="${usuario.id}"></i>
+                                        </li>`;
               
                 listaUsuarios.appendChild(usuarioBox);
               
