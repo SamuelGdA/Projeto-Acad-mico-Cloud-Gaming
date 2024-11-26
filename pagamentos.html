@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="pagamentos/pagamentos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
     <header>
         <div class="logo-e-nome">
@@ -19,14 +21,13 @@
         <div class="pagamentos-container">
             <h2>Histórico de Pagamentos</h2>
             <div class="pagamentos-acoes">
-                <a href="#">
+                <a href="trocar-plano.html">
                     <button>Trocar de Plano</button>
                 </a>
-                
-                <a href="pagamentos/meus-pagamentos.html">
+
+                <a href="meus-pagamentos.html">
                     <button>Minhas Formas de Pagamento</button>
                 </a>
-                
             </div>
             <table class="historico-pagamentos">
                 <thead>
@@ -36,69 +37,53 @@
                         <th>Valor</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>17/10/2024</td>
-                        <td>Cartão de crédito</td>
-                        <td>R$ 49,90</td>
-                    </tr>
-                    <tr>
-                        <td>17/09/2024</td>
-                        <td>PIX</td>
-                        <td>R$ 29,90</td>
-                    </tr>
-                    <tr>
-                        <td>29/11/2024</td>
-                        <td>Boleto</td>
-                        <td>R$ 100,00</td>
-                    </tr>
+                <tbody id="historicoPagamentosBody">
+                    <!-- Os dados serão adicionados dinamicamente aqui -->
                 </tbody>
             </table>
         </div>
-        
     </section>
-
-
-
     <nav class="menu-lateral">
         <ul>
             <li class="menu-item">
-                <a href="#">
+                <a href="index.html">
                     <span class="menu-icon"><i class="bi bi-controller"></i></span>
                     <span class="txt-link">Página Inicial</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="#">
+                <a href="tela-perfil.html">
                     <span class="menu-icon"><i class="bi bi-person-circle"></i></span>
                     <span class="txt-link">Meu Perfil</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="#">
+                <a href="amigos.html">
                     <span class="menu-icon"><i class="bi bi-people-fill"></i></span>
                     <span class="txt-link">Amigos</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="#">
+                <a href="planos.html">
                     <span class="menu-icon"><i class="bi bi-gem"></i></span>
                     <span class="txt-link">Planos</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="#">
+                <a href="pagamentos.html">
                     <span class="menu-icon"><i class="bi bi-piggy-bank"></i></span>
                     <span class="txt-link">Meus Pagamentos</span>
                 </a>
             </li>
-               
+
         </ul>
- 
+
     </nav>
 </body>
+<script src="pagamentos/pagamentos.js"></script>
+
 </html>

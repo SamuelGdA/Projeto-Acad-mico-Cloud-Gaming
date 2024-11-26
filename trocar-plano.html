@@ -5,45 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dispositivos</title>
-    <link rel="stylesheet" href="/dispositivos/dispositivo.css">
+    <link rel="stylesheet" href="pagamentos/trocar-plano.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
     <header>
         <div class="logo-e-nome">
-            <a href="index.html">
-                <img src="img/logo.png" alt="Logo Xbox">
-            </a>
+            <i class="bi bi-xbox"></i>
             <span>PASSE PIRATA</span>
         </div>
         <a class="logx" href="Log out">SAIR</a>
     </header>
+
     <section class="conteudo">
-        <section class="dispositivos-container">
-            <div class="cadastro">
-                <a href="cadastro-dispositivo.html"><button class="botao-cadastrar">+ Cadastrar Novo Dispositivo</button></a>
-                <h3>Seus Dispositivos</h3>
-                <div class="lista-dispositivos">
-                    <div class="dispositivo">
-                        <p><i class="bi bi-phone-fill"></i> <strong>Nome:</strong> Celular</p>
-                        <p><strong>ID:</strong> 001</p>
-                    </div>
-                    <div class="dispositivo">
-                        <p><i class="bi bi-xbox"></i> <strong>Nome:</strong> Console</p>
-                        <p><strong>ID:</strong> 002</p>
-                    </div>
-                    <div class="dispositivo">
-                        <p><i class="bi bi-pc-display"></i> <strong>Nome:</strong> PC</p>
-                        <p><strong>ID:</strong> 003</p>
-                    </div>
-                </div>
+        <div class="plano-atual">
+            <h2>Plano Atual</h2>
+            <div id="plano-atual">
+                <!-- Informações do plano atual serão inseridas aqui -->
             </div>
-        </section>
-        
+        </div>
+
+        <div class="planos-disponiveis">
+            <h2>Planos Disponíveis</h2>
+            <div id="planos-disponiveis">
+                <!-- Informações dos planos disponíveis serão inseridas aqui -->
+            </div>
+        </div>
     </section>
 
-
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()" aria-label="Fechar Modal">&times;</span>
+            <h3 id="planoSelecionado"></h3>
+            <p id="precoSelecionado">Escolha a forma de pagamento</p>
+            <div class="tab-content" id="salvos">
+                <!-- Cartões salvos serão inseridos aqui -->
+            </div>
+            <button class="botao-comprar" id="comprarPlanoButton" style="display:none;">Comprar o Plano</button>
+        </div>
+    </div>
 
     <nav class="menu-lateral">
         <ul>
@@ -81,10 +83,9 @@
                     <span class="txt-link">Meus Pagamentos</span>
                 </a>
             </li>
-
         </ul>
-
     </nav>
 </body>
 
 </html>
+<script src="pagamentos/trocar-plano.js"></script>

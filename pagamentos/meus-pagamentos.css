@@ -131,6 +131,7 @@ ul li.menu-item a .menu-icon i {
     font-size: 1.3em;
 }
 /* Conteúdo Principal */
+/* Estilo Geral */
 .conteudo {
     min-height: 0vh;
     padding: 20px;
@@ -185,8 +186,6 @@ h2, h3 {
     position: relative;
 }
 
-
-
 /* Texto no cartão */
 .cartao .cartao-tipo {
     font-size: 1.2em;
@@ -194,10 +193,11 @@ h2, h3 {
     font-weight: bold;
 }
 
-.cartao .cartao-tipo i{
+.cartao .cartao-tipo i {
     margin-left: 3%;
     font-size: 1.2em;
 }
+
 .cartao .cartao-nome {
     font-size: 1em;
     margin-top: 10px;
@@ -232,27 +232,31 @@ h2, h3 {
     background-color: #a21d1d;
 }
 
-
 /* Formulário de Cadastro */
 .cadastrar-pagamento {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.form-group {
+.cadastrar-pagamento h3 {
+    text-align: center;
+    font-size: 1.3em;
     margin-bottom: 15px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1.1em;
+.cadastrar-pagamento label {
+    font-size: 1em;
     color: #fff;
+    margin-bottom: 8px;
+    display: block;
 }
 
-.form-group input, .form-group select {
+.cadastrar-pagamento input, .cadastrar-pagamento select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -262,11 +266,8 @@ h2, h3 {
     color: #fff;
 }
 
-button[type="submit"] {
-    width: 8%;
-    max-height: 1%;
-    background-color: #0076b69f;
-    font-family: "Kanit", sans-serif;
+.cadastrar-pagamento button {
+    background-color: #0077b6;
     color: white;
     border: none;
     padding: 15px;
@@ -274,14 +275,99 @@ button[type="submit"] {
     cursor: pointer;
     border-radius: 5px;
     transition: 0.3s;
-    border: 1px solid white;
+    align-self: center;
+    width: 50%;
+}
+
+.cadastrar-pagamento button:hover {
+    background-color: #005f9e;
+}
+
+/* Melhorias nos botões gerais */
+button[type="submit"], button[type="button"] {
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
 }
 
 form {
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    flex-direction: column;
+    gap: 15px;
+}
+/*cartao*/
+/* Estilo do cartão */
+.forma-pagamento {
+    width: 270px; /* Tamanho fixo do cartão */
+    height: 180px; /* Altura fixada para os cartões */
+    background: linear-gradient(135deg, #03045e, #0077b6); /* Gradiente para o cartão */
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombras para dar efeito de profundidade */
+    font-family: "Kanit", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box; /* Para garantir que o padding não ultrapasse a largura do cartão */
+    margin-bottom: 20px; /* Espaço entre os cartões */
 }
 
-button[type="submit"]:hover {
-    background-color: #0077b6;
+/* Botão de remover no cartão */
+.forma-pagamento .btn-remover {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #d62828; /* Cor vermelha do botão */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    cursor: pointer;
+    display: block;
+}
+
+.forma-pagamento .btn-remover:hover {
+    background-color: #a21d1d; /* Cor mais escura quando passar o mouse */
+}
+
+/* Texto do tipo de cartão */
+.forma-pagamento .card-type {
+    font-size: 1.2em;
+    text-transform: capitalize; /* Primeira letra maiúscula */
+    font-weight: bold;
+    margin-bottom: 10px; /* Espaço entre o tipo e o número do cartão */
+}
+
+/* Nome no cartão */
+.forma-pagamento .card-owner {
+    font-size: 1em;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Trunca texto se for maior do que o espaço disponível */
+    white-space: nowrap;
+}
+
+/* Número do cartão */
+.forma-pagamento .card-number {
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    word-wrap: break-word;
+    font-family: monospace; /* Para garantir que os números fiquem alinhados */
+    white-space: nowrap;
+}
+
+/* Data de validade do cartão */
+.forma-pagamento .card-expiry {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.formas-container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }

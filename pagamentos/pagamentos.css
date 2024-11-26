@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Kanit:wght@300;400&family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
- 
+
 body {
     min-height: 100%;
     max-width: 100%;
@@ -15,9 +16,9 @@ body {
     background-attachment: fixed;
     margin-bottom: 60px;
 }
- 
+
 /* Header */
- 
+
 header {
     background-color: #352315;
     height: 8vh;
@@ -35,12 +36,12 @@ header {
     position: absolute;
     width: calc(100% - 6em);
     margin-bottom: 2em;
-    top: 10vh;
+    top: 10vh; /* Ajuste a posição para baixo */
     left: 4.8em;
     display: flex;
     justify-content: space-between;
 }
- 
+
 .logo-e-nome {
     display: flex;
     align-items: center;
@@ -48,16 +49,16 @@ header {
     color: white;
     padding-left: 15px;
 }
- 
+
 .logo-e-nome i {
     font-size: 1.7em;
 }
- 
+
 .logo-e-nome span {
     font-size: 1.7em;
     font-family: "Pirata One", system-ui;
 }
- 
+
 .logx {
     font-family: "Kanit", sans-serif;
     font-size: 1.2em;
@@ -65,9 +66,9 @@ header {
     margin-left: auto;
     margin-right: 20px;
 }
- 
+
 /* Menu Lateral */
- 
+
 .menu-lateral {
     background-color: #3f301d;
     width: 3.7em;
@@ -77,39 +78,38 @@ header {
     bottom: 0;
     box-shadow: 4px 0 0 #0077b6;
 }
- 
+
 hr {
     opacity: 50%;
 }
- 
+
 ul {
     height: 100%;
     list-style-type: none;
 }
- 
+
 ul li.menu-item {
     transition: .2s;
     width: 3.7em;
 }
- 
+
 ul li.menu-item:hover {
     background: rgb(0 118 182 / 90%);
     box-shadow: inset 0 2px 0px rgba(255, 255, 255, 0.688), inset -2px 0 0px rgba(255, 255, 255, 0.688), inset 0 -2px 0px rgba(255, 255, 255, 0.688);
     width: 16em;
 }
- 
- 
+
 .txt-link {
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     display: none;
 }
- 
+
 ul li.menu-item:hover .txt-link {
     display: block;
     white-space: nowrap;
 }
- 
+
 ul li.menu-item a {
     color: white;
     text-decoration: none;
@@ -119,14 +119,15 @@ ul li.menu-item a {
     gap: 26px;
     align-items: center;
 }
- 
+
 .menu-icon {
     padding: 5px;
 }
- 
+
 ul li.menu-item a .menu-icon i {
     font-size: 1.3em;
 }
+
 .pagamentos-container {
     width: 100%;
     margin: auto;
@@ -143,10 +144,15 @@ ul li.menu-item a .menu-icon i {
     margin-bottom: 20px;
 }
 
+.historico-pagamentos-container {
+    max-height: 400px; /* Altura máxima com rolagem */
+    overflow-y: auto; /* Adiciona rolagem vertical */
+    margin-bottom: 20px;
+}
+
 .historico-pagamentos {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
 }
 
 .historico-pagamentos th,
@@ -163,7 +169,6 @@ ul li.menu-item a .menu-icon i {
 .pagamentos-acoes {
     display: flex;
     justify-content: space-around;
-
 }
 
 .pagamentos-acoes button {
@@ -183,4 +188,3 @@ ul li.menu-item a .menu-icon i {
 .pagamentos-acoes button:hover {
     background-color: #0077b6;
 }
-

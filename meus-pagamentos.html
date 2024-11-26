@@ -4,46 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dispositivos</title>
-    <link rel="stylesheet" href="/dispositivos/dispositivo.css">
+    <title>Formas de Pagamento</title>
+    <link rel="stylesheet" href="pagamentos/meus-pagamentos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
     <header>
         <div class="logo-e-nome">
-            <a href="index.html">
-                <img src="img/logo.png" alt="Logo Xbox">
-            </a>
+            <i class="bi bi-xbox"></i>
             <span>PASSE PIRATA</span>
         </div>
         <a class="logx" href="Log out">SAIR</a>
     </header>
+
     <section class="conteudo">
-        <section class="dispositivos-container">
-            <div class="cadastro">
-                <a href="cadastro-dispositivo.html"><button class="botao-cadastrar">+ Cadastrar Novo Dispositivo</button></a>
-                <h3>Seus Dispositivos</h3>
-                <div class="lista-dispositivos">
-                    <div class="dispositivo">
-                        <p><i class="bi bi-phone-fill"></i> <strong>Nome:</strong> Celular</p>
-                        <p><strong>ID:</strong> 001</p>
-                    </div>
-                    <div class="dispositivo">
-                        <p><i class="bi bi-xbox"></i> <strong>Nome:</strong> Console</p>
-                        <p><strong>ID:</strong> 002</p>
-                    </div>
-                    <div class="dispositivo">
-                        <p><i class="bi bi-pc-display"></i> <strong>Nome:</strong> PC</p>
-                        <p><strong>ID:</strong> 003</p>
-                    </div>
+        <div class="pagamentos-container" id="pagamentosContainer">
+            <div class="teste" id="teste">
+                <h2>Minhas Formas de Pagamento</h2>
+            </div>
+            <!-- Lista de Formas de Pagamento -->
+            <div class="formas-cadastradas">
+                <h3>Formas Cadastradas:</h3>
+                <div class="formas-container" id="formasContainer">
                 </div>
             </div>
-        </section>
-        
+            <!-- Formulário para Cadastrar Nova Forma de Pagamento -->
+            <div class="cadastrar-pagamento">
+                <h3>Cadastrar Nova Forma de Pagamento</h3>
+                <form id="formPagamento">
+                    <label for="tipoPagamento">Tipo de Pagamento:</label>
+                    <select id="tipoPagamento" required>
+                        <option value="1">Crédito</option>
+                        <option value="2">Débito</option>
+                    </select>
+
+                    <label for="nomeNoCartao">Nome no Cartão:</label>
+                    <input type="text" id="nomeNoCartao" required>
+
+                    <label for="numeroCartao">Número do Cartão:</label>
+                    <input type="text" id="numeroCartao" maxlength="16" required>
+
+                    <label for="validadeCartao">Validade (MM/AA):</label>
+                    <input type="text" id="validadeCartao" placeholder="MM/AA" maxlength="5" required>
+
+                    <label for="cvvCartao">CVV:</label>
+                    <input type="text" id="cvvCartao" maxlength="3" required>
+
+                    <button type="button" id="botaoCadastrarPagamento">Cadastrar Forma de Pagamento</button>
+                </form>
+            </div>
+        </div>
     </section>
-
-
 
     <nav class="menu-lateral">
         <ul>
@@ -81,10 +93,9 @@
                     <span class="txt-link">Meus Pagamentos</span>
                 </a>
             </li>
-
         </ul>
-
     </nav>
 </body>
+<script src="pagamentos/meus-pagamentos.js"></script>
 
 </html>
