@@ -10,6 +10,46 @@
     <link rel="stylesheet" href="tela-perfil/tela-perfil.css">
 </head>
 <body>
+
+    <div class="bloco-msg-topo" style="display: none;">
+        <span class="msg-topo"></span>
+    </div>
+
+    <div class="janela-modal" style="display: none;">
+
+        <div class="modal-excluir-conta" style="display: none;">
+            <p>Digite a senha para confirmar. Essa ação não poderá ser revertida.</p>
+            <div class="input-passw-box">
+                <input id="senha-para-exclusao" type="password">
+                <i class="bi bi-eye-slash"></i>
+                <span id="msg-erro-exclusao">texto</span>
+            </div>
+            <div>
+                <button class="btn-cancelar-exclusao">Cancelar</button>
+                <button class="btn-confirmar-exclusao">Excluir conta</button>
+            </div>
+        </div>
+
+        <div class="modal-foto" style="display: none;">
+            <div class="opcoes-fotos">
+                <button><input id="upload-foto" type="file"><i class="bi bi-upload"></i></button>
+            
+            </div>
+            <div class="container-foto-atual">
+                <div>
+                    <img id="foto-atual" src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
+                    <span>Minha foto</span>
+                </div>
+                <div>
+                    <button class="btn-confirmar-fp">Confirmar</button>
+                    <button class="btn-cancelar-fp">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div></div>
+
     <header>
 
         <div class="logo-e-nome">
@@ -46,24 +86,14 @@
 
             <nav>
                 <ul>
-                    <li class="nav-jogos-fav li-selecionada">Jogos favoritos (10)</li>
-                    <li class="nav-amigos">Amigos (3)</li>
-                    <li class="nav-avaliacoes">Avaliações (7)</li>
+                    <li class="nav-jogos-fav li-selecionada">Jogos favoritos</li>
+                    <li class="nav-amigos">Amigos</li>
+                    <li class="nav-avaliacoes">Avaliações</li>
                     <li class="nav-meus-dados">Meus dados</li>
                 </ul>
             </nav>
 
             <section class="jogos-favoritos" style="display: flex;">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
-                <img src="../img/sub.jpg" alt="">
             </section>
 
             <section class="amigos" style="display: none;">
@@ -79,45 +109,62 @@
             <section class="meus-dados" style="display: none;">
                 <div class="mostra-dados" style="display: flex;">
                     <span class="label">Nome do usuário</span>
-                    <span class="dado name-value">Laliras</span>
+                    <span class="dado name-value"></span>
 
                     <span class="label">Username</span>
-                    <span class="dado username-value">laliras01</span>
+                    <span class="dado username-value"></span>
 
                     <span class="label">E-mail</span>
-                    <span class="dado email-value">larissa@gmail.com</span>
+                    <span class="dado email-value"></span>
 
                     <span class="label">Data de Nascimento</span>
-                    <span class="dado dn-value">01/03/2005</span>
+                    <span class="dado dn-value"></span>
 
-                    <button class="btn-alterar-dados">Alterar meus dados</button>
-                    <button class="btn-alterar-senha">Alterar minha senha</button>
+                    <div>
+                        <button class="btn-alterar-dados">Alterar meus dados</button>
+                        <button class="btn-alterar-senha">Alterar minha senha</button>
+                        <button class="btn-deletar-conta">Apagar minha conta</button>
+                    </div>
                 </div>
                     
                 <div class="editar-dados" style="display: none">
                     <label for="name">Nome do usuário</label>
                     <input type="text" class="input-edicao" id="name" name="name">
+                    <span class="msg"></span>
 
                     <label for="username">Username</label>
                     <input type="text" class="input-edicao" id="username" name="username">
+                    <span class="msg"></span>
 
                     <label for="email">E-mail</label>
                     <input type="email" class="input-edicao" id="email" name="email">
+                    <span class="msg"></span>
 
-                    <button class="btn-concluir">Concluir</button>
+                    <div>
+                        <button class="btn-concluir">Concluir</button>
+                        <button class="btn-cancelar">Cancelar</button>
+                    </div>
+
+                    
                 </div>
 
                 <div class="editar-senha" style="display: none">
                     <label class="label">Senha atual</label>
-                    <input type="password" class="input-edicao" maxlength="8">
+                    <input type="password" class="input-edicao" id="senha-atual" maxlength="8">
+                    <span class="msg"></span>
 
                     <label class="label">Nova senha</label>
-                    <input type="password" class="input-edicao" maxlength="8">
+                    <input type="password" class="input-edicao" id="nova-senha" maxlength="8">
+                    <span class="msg"></span>
 
                     <label class="label">Confirmar nova senha</label>
-                    <input type="password" class="input-edicao" maxlength="8">
+                    <input type="password" class="input-edicao" id="conf-nova-senha" maxlength="8">
+                    <span class="msg"></span>
 
-                    <button class="btn-concluir">Concluir</button>
+                    <div>
+                        <button class="btn-concluir">Concluir</button>
+                        <button class="btn-cancelar">Cancelar</button>
+                    </div>
                 </div>
             </section>
             
@@ -127,7 +174,7 @@
             <span class="titulo-amigos">Amigos</span>
             <div class="input-box">
                 <i class="bi bi-search"></i>
-                <input type="text" placeholder="Pesquise pelo username">
+                <input id="friend-search" type="text" placeholder="Pesquise pelo username">
             </div>
             <ul id="lista-amigos">
             </ul>
@@ -138,47 +185,48 @@
     <nav class="menu-lateral">
 
         <ul>
-    
+
             <li class="menu-item">
-                <a href="index.html">
+                <a href="#">
                     <span class="menu-icon"><i class="bi bi-controller"></i></span>
                     <span class="txt-link">Página Inicial</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="tela-perfil.html">
+                <a href="#">
                     <span class="menu-icon"><i class="bi bi-person-circle"></i></span>
                     <span class="txt-link">Meu Perfil</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="amigos.html">
+                <a href="#">
                     <span class="menu-icon"><i class="bi bi-people-fill"></i></span>
                     <span class="txt-link">Amigos</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="planos.html">
+                <a href="#">
                     <span class="menu-icon"><i class="bi bi-gem"></i></span>
                     <span class="txt-link">Planos</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="pagamentos.html">
+                <a href="#">
                     <span class="menu-icon"><i class="bi bi-piggy-bank"></i></span>
                     <span class="txt-link">Meus Pagamentos</span>
                 </a>
             </li>
                 
         </ul>
-    
+
     </nav>
 
-    <script src="tela-perfil.js"></script>
-    <script src="tperfil-personalizacao.js"></script>
+    <script src="idLogin.js"></script>
+    <script src="tela-perfil/tperfil-personalizacao.js"></script>
+    <script src="tela-perfil/tela-perfil.js"></script>
 </body>
 </html>

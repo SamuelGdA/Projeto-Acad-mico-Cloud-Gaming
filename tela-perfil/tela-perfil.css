@@ -10,7 +10,7 @@
 body {
     min-height: 100vh;
     max-width: 100%;
-    background: linear-gradient(to bottom, #0077be, #001f3f);
+    background: linear-gradient(#0077b6, #03045e);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -225,7 +225,6 @@ ul li.menu-item a .menu-icon i {
 }
 
 .card-perfil nav {
-    width: fit-content;
     max-width: 100%;
     margin-left: 50px;
     margin-top: 80px;
@@ -254,18 +253,21 @@ ul li.menu-item a .menu-icon i {
 /* Jogos Favoritos */
 
 .jogos-favoritos {
+    max-width: 100%;
     width: 100%;
     padding-left: 50px;
     padding-right: 50px;
     margin-top: 20px;
     display: flex;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 20px 20px;
 }
 
 .jogos-favoritos img {
-    width: 135px;
+    flex: 0 1 calc(32% - 10px); 
+    max-width: calc(32% - 10px); 
+    cursor: pointer;
 }
 
 /* Amigos */
@@ -416,7 +418,6 @@ label, span.label {
 }
 
 button {
-    margin-top: 4px;
     width: fit-content;
     padding: 4px 10px;
     font-family: "Kanit", sans-serif;
@@ -426,7 +427,6 @@ button {
     background-color: #0076b69f;
     border: 1px solid white;
     cursor: pointer;
-    margin-top: 5px;
 }
 
 button:hover {
@@ -434,9 +434,36 @@ button:hover {
 }
 
 .input-edicao {
-    margin-bottom: 15px;
+    margin-bottom: 3px;
     width: fit-content;
     height: 30px;
+}
+
+.msg {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.meus-dados div div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.meus-dados .mostra-dados button {
+    margin-bottom: 8px;
+}
+
+.btn-deletar-conta {
+    background-color: rgb(193, 45, 45);
+}
+
+.btn-deletar-conta:hover {
+    background-color: rgb(223, 61, 61);
 }
 
 /* Lista de Amigos */
@@ -525,3 +552,210 @@ input {
     opacity: 0.5;
     font-size: 0.8em;
 }
+
+/* Modal */
+
+.janela-modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+}
+
+/* Modal Exclusão */
+
+.modal-excluir-conta {
+    width: 700px;
+    height: 200px;
+    background-color: #352315;
+    margin: 0 auto;
+    border-radius: 12px;
+    display: flex;
+    align-self: center;
+    padding: 30px 0 30px 30px;
+    border: 3px solid #0077b6;
+    text-align: center;
+    flex-direction: column;
+    padding-right: 30px;
+    align-items: center;
+}
+
+.modal-excluir-conta p {
+    color: white;
+    font-size: 1.1em;
+    font-family: "Kanit", sans-serif;
+}
+
+.input-passw-box {
+    margin: 10px auto 30px auto;
+    position: relative;
+}
+
+#senha-para-exclusao {
+    width: 100%;
+    font-size: 1em;
+    padding-right: 2.4em;
+}
+
+.input-passw-box i {
+    font-size: 1.1em;
+    color: white;
+    position: absolute;
+    top: 0.7em;
+    right: 10px;
+    cursor: pointer;
+}
+
+.input-passw-box span {
+    display: none;
+    color: white;
+    font-size: 0.8em;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 42px;
+}
+
+.modal-excluir-conta div {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-confirmar-exclusao {
+    background-color: rgb(193, 45, 45);
+}
+
+.btn-confirmar-exclusao:hover {
+    background-color: rgb(223, 61, 61);
+}
+
+/* Modal Foto*/
+
+.modal-foto {
+    width: 700px;
+    height: 400px;
+    background-color: #352315;
+    margin: 0 auto;
+    border-radius: 12px;
+    display: flex;
+    align-self: center;
+    padding: 30px 0 30px 30px;
+    border: 3px solid #0077b6;
+}
+
+.container-foto-atual {
+    width: 35%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-foto-atual div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-foto-atual img {
+    width: 7.5em;
+    border-radius: 120px;
+    border: 2px solid white;
+    margin-bottom: 5px;
+}
+
+.container-foto-atual span {
+    font-family: "Kanit", sans-serif;
+    color: white;
+    font-size: 1.1em;
+}
+
+.container-foto-atual button {
+    width: 8em;
+    margin-bottom: 5px;
+}
+
+.opcoes-fotos {
+    display: grid;
+    width: 65%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    row-gap: 5px;
+    column-gap: 7px;
+}
+
+.opcoes-fotos img {
+    width: 6em;
+    border-radius: 96px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.opcoes-fotos button {
+    position: relative;
+    width: 6.5em;
+    height: 6.5em;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 104px;
+    border: 2px solid white;
+    overflow: hidden;
+}
+
+.opcoes-fotos button input {
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7em;
+    height: 7em;
+    border-radius: 104px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.opcoes-fotos button:hover {
+    background-color: black;
+}
+
+.opcoes-fotos button i {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2.3em;
+}
+
+.foto-selecionada {
+    border: 3px solid yellow;
+}
+
+/* Mensagem do topo */
+
+.bloco-msg-topo {
+    width: fit-content;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0076b6;
+    border: 2px solid rgba(255, 255, 255, 0.527);
+    z-index: 100;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.bloco-msg-topo span {
+    font-family: "Kanit", sans-serif;
+    color: white;
+    font-size: 1em;
+}
+

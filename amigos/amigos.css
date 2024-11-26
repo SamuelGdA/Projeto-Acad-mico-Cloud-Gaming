@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Kanit:wght@300;400&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+/* Informações da Página */
+
+.conteudo {
+    min-height: 90vh;
+    padding-bottom: 25px;
+    position: relative;
+    width: calc(100% - 6em);
+    margin-bottom: 2em;
+    top: 10vh;
+    left: 4.8em;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Container principal */
+
+.amizades {
+    background: #352315;
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 2em;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Lado novas amizades */
+
+h2 {
+    padding: 30px 30px 0 30px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    gap: 10px;
+}
+
+h3 {
+    padding: 0 30px 0 30px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    color: white;
+    font-size: 1em;
+}
+
+.adicionar-amizade {
+    width: 45%;
+}
+
+.input-wrapper {
+    margin-top: 15px;
+    background-color: #3f301d;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pesquisa-usuario {
+    padding-right: 15px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 0.9em;
+    outline: 0;
+    caret-color: white;
+    color: white;
+}
+
+.adicionar-amizade div i {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.lista-usuarios {
+    max-width: 100%;
+    max-height: fit-content;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lista-usuarios li {
+    background-color: #3f301d;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 0 15px 0 15px;
+    margin-bottom: 15px;
+}
+
+.l-adicionar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.l-adicionar div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.lista-usuarios li img {
+    width: 50px;
+    border-radius: 25px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.nome-usuario, .username-usuario {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.username-usuario {
+    opacity: 0.5;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.adicionar {
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Lado solicitações pendentes */
+
+.pendentes {
+    height: 100%;
+    width: 45%;
+}
+
+.pendentes ul {
+    width: 100%;
+    height: 81%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 7px;
+    margin: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pendentes ul li {
+    width: 100%;
+    background-color: #3f301d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    border-radius: 10px;
+    padding: 0 15px 0 15px;
+    margin-bottom: 15px;
+}
+
+.l-solicitacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pendentes ul li div img {
+    width: 50px;
+    border-radius: 25px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.pendentes ul li div .info-solicitante {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nome-solicitante, .username-solicitante {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 0.9em;
+}
+
+.username-amigo {
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+
+.r-solicitacao {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 5px;
+}
+
+.aceitar {
+    color: rgb(50, 184, 50);
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.recusar {
+    color: rgb(189, 56, 56);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.pessoa {
+    color: white;
+    font-size: 40em;
+    position: absolute;
+    right: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Kanit:wght@300;400&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    max-width: 100%;
+    background: linear-gradient(#0077b6, #03045e);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 60px;
+}
+
+/* Header */
+
+header {
+    background-color: #352315;
+    height: 8vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.logo-e-nome {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    color: white;
+    padding-left: 15px;
+}
+
+.logo-e-nome i {
+    font-size: 1.7em;
+}
+
+.logo-e-nome span {
+    font-size: 1.7em;
+    font-family: "Pirata One", system-ui;
+}
+
+.logx {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.2em;
+    color: white;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+/* Menu Lateral */
+
+.menu-lateral {
+    background-color: #3f301d;
+    width: 3.7em;
+    height: 92vh;
+    padding: 0 0 40px 5px;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 4px 0 0 #0077b6;
+}
+
+hr {
+    opacity: 50%;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.menu-item {
+    transition: .2s;
+    width: 3.7em;
+}
+
+ul li.menu-item:hover {
+    background: rgb(0 118 182 / 90%);
+    box-shadow: inset 0 2px 0px rgba(255, 255, 255, 0.688), inset -2px 0 0px rgba(255, 255, 255, 0.688), inset 0 -2px 0px rgba(255, 255, 255, 0.688);
+    width: 16em;
+}
+
+
+.txt-link {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    display: none;
+}
+
+ul li.menu-item:hover .txt-link {
+    display: block;
+    white-space: nowrap;
+}
+
+ul li.menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 20px 5px;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+.menu-icon {
+    padding: 5px;
+}
+
+ul li.menu-item a .menu-icon i {
+    font-size: 1.3em;
+}
+
+/* Mensagem do topo */
+
+.bloco-msg-topo {
+    width: fit-content;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0076b6;
+    border: 2px solid rgba(255, 255, 255, 0.527);
+    z-index: 100;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.bloco-msg-topo span {
+    font-family: "Kanit", sans-serif;
+    color: white;
+    font-size: 1em;
+}

@@ -70,7 +70,7 @@ form.addEventListener('submit', async (event) => {
 
   try {
     // Enviando a requisição POST para a API
-    const resposta = await fetch('Http://localhost:3000/usuarios/', {
+    const resposta = await fetch('http://localhost:3000/usuarios/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -93,7 +93,7 @@ form.addEventListener('submit', async (event) => {
     } else {
       // Erro no cadastro
       popupTitle.textContent = 'Erro no Cadastro';
-      popupMessage.textContent = resultado.mensagem || 'Ocorreu um erro ao tentar cadastrar. Por favor, tente novamente.';
+      popupMessage.innerHTML = resultado.mensagem || 'Ocorreu um erro ao tentar cadastrar. Por favor, tente novamente.';
       popup.style.display = 'block';
     }
   } catch (erro) {
@@ -103,3 +103,17 @@ form.addEventListener('submit', async (event) => {
     popup.style.display = 'block';
   }
 });
+
+var cleave = new Cleave('#dataNascimento', {
+  date: true,
+  datePattern: ['Y', 'm', 'd'], // Formato: Ano/Mês/Dia
+  delimiter: '/',               // Delimitador '/'
+  onValueChanged: function(e) {
+    // Opcional: Adicionar lógica quando o valor muda
+  }
+});
+
+const dataRegex = /^\d{4}\/\d{2}\/\d{2}$/;
+if (!dataRegex.test(dataNascimento)) {
+  mensagemErro += '• A data deve estar no formato AAAA/MM/DD.<br>';
+}
