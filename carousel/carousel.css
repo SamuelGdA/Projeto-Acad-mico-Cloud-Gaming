@@ -1,11 +1,31 @@
-/* Estilos para o carrossel */
+/* Estilos do Carrossel e do Leme */
+
+/* Container do Carrossel */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Estilos para o Leme */
+.carrossel-leme {
+    width: 120px;
+    position: absolute;
+    top: -100px;  /* Mantém o leme acima do carrossel */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 1s ease-in-out;
+    z-index: 2;  /* Fica acima de tudo */
+}
+
+/* Carrossel */
 .carousel {
     position: relative;
     overflow: hidden;
-    width: 92%;
-    margin: 50px auto 0; /* Adiciona margem superior para separar do conteúdo acima */
-    margin-left: 100px;
-    background-color: #4B2E2E !important;
+    border-radius: 10px;
+    background-color: #4B2E2E;
+    padding: 20px;
 }
 
 .carousel-track-container {
@@ -29,15 +49,16 @@
 
 .game-card {
     flex: 1;
-    margin: 0 15px; /* Aumenta o espaçamento entre os jogos */
+    margin: 0 15px;
     text-align: center;
     transition: transform 0.3s ease;
 }
 
 .game-card img {
-    width: 480px;
-    height: 300px; /* Aumenta a altura das imagens */
-    object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+    width: 100%;
+    max-width: 480px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -46,13 +67,12 @@
     transform: scale(1.05);
 }
 
-.game-card img:hover{
+.game-card img:hover {
     box-shadow: 0 0 20px gold;
 }
 
-
 .game-info {
-    margin-top: 10px; /* Espaço entre a imagem e o texto */
+    margin-top: 10px;
 }
 
 .game-info h3 {
@@ -68,6 +88,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Navegação */
 .nav {
     position: absolute;
     top: 50%;
@@ -78,27 +99,33 @@
     color: #fff;
     cursor: pointer;
     padding: 0 15px;
-    z-index: 10; /* Aumentado para garantir que fique acima de outros elementos */
+    z-index: 3;
+    border-radius: 50%;
 }
 
 .nav.prev {
-    left: 3px;
+    left: 10px;
 }
 
 .nav.next {
-    right: 3px;
+    right: 10px;
 }
 
 .nav:focus {
     outline: none;
 }
 
+/* Rotação do Leme */
+.rotate-360 {
+    transform: rotate(360deg);
+}
+
+.rotate--360 {
+    transform: rotate(-360deg);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
-    .carousel-slide {
-        flex-wrap: wrap;
-    }
-
     .game-card {
         flex: 1 1 45%;
         margin: 10px;
@@ -106,6 +133,11 @@
 
     .game-card img {
         height: 150px;
+    }
+
+    .carrossel-leme {
+        width: 80px;
+        top: -60px;
     }
 }
 
@@ -117,5 +149,10 @@
 
     .game-card img {
         height: 150px;
+    }
+
+    .carrossel-leme {
+        width: 70px;
+        top: -40px;
     }
 }

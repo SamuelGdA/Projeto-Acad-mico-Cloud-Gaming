@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = Array.from(track.children);
     const prevButton = document.querySelector('.nav.prev');
     const nextButton = document.querySelector('.nav.next');
+    const leme = document.querySelector('#carrossel-leme');
+    let currentIndex = 0;
 
     const slideWidth = slides[0].offsetWidth;
 
@@ -11,10 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.style.left = slideWidth * index + 'px';
     });
 
-    let currentIndex = 0;
-
     const moveToSlide = (index) => {
         track.style.transform = 'translateX(-' + slideWidth * index + 'px)';
+    };
+
+    const rotateLeme = (direction) => {
+        if (direction === 'next') {
+            leme.classList.remove('rotate--360');
+            leme.classList.add('rotate-360');
+        } else {
+            leme.classList.remove('rotate-360');
+            leme.classList.add('rotate--360');
+        }
     };
 
     // Navegação para o slide anterior
@@ -25,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex--;
         }
         moveToSlide(currentIndex);
+        rotateLeme('prev');
     });
 
     // Navegação para o próximo slide
@@ -35,5 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex++;
         }
         moveToSlide(currentIndex);
+        rotateLeme('next');
     });
 });
