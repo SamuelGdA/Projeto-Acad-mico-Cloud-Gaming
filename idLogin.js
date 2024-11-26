@@ -1,2 +1,2 @@
-let idUsuarioLogado = 7;
-let idUsuario = 7;
+let idUsuarioLogado;
+let idUsuario;

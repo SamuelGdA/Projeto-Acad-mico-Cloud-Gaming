@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Resposta da API:', resultado);
 
       if (resposta.ok) {
+        await guardarIdUsuario();
+
         // Login bem-sucedido
         // Armazenar o token JWT ou informações do usuário, se aplicável
         if (resultado.token) {
@@ -124,3 +126,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Função pro login
+async function guardarIdUsuario(dadosLogin) {
+  try {
+      const response = fetch(`http://localhost:3000/usuarios/user/${dadosLogin.identificador}/responder`)
+      if (!response.ok) {
+        throw new Error('Erro ao buscar o usuário.');
+      }
+    
+      const usuario = await response.json();
+
+      idUsuario = usuario.id;
+      idUsuarioLogado = usuario.id;
+  } catch (error) {
+      console.error(error);
+  }
+}

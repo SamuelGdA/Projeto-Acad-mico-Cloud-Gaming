@@ -1,6 +1,4 @@
 // Dados do usuário
-const idUsuarioLogado = 7
-let idUsuario = 7
 
 function verificaUsuarioLogado() {
   if(idUsuario !== idUsuarioLogado) {

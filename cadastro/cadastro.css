@@ -54,7 +54,7 @@ body {
 
 /* Formulário */
 .form {
-  width: 25vw; /* Reduzido de 35vw para 25vw */
+  width: 35vw; /* Reduzido de 35vw para 25vw */
   display: flex;
   flex-direction: column;
   gap: 20px;
