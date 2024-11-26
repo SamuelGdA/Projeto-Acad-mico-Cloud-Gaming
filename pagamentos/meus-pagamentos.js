@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const usuarioId = 1;
 
   // Função para pegar as formas de pagamento cadastradas do backend
   const fetchFormasPagamentos = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/pagamentos/getformas/${usuarioId}`);
+      const response = await fetch(`http://localhost:3000/pagamentos/getformas/${idUsuario}`);
       const formas = await response.json();
       
       const formasContainer = document.getElementById('formasContainer');
@@ -13,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!Array.isArray(formas) || formas.length === 0) {
         formasContainer.innerHTML = '<p>Nenhuma forma de pagamento cadastrada. Faça a sua!</p>';
       } else {
+        console.log(formas)
         formasContainer.innerHTML = ''; // Limpa o conteúdo anterior
         formas.forEach(forma => {
           const div = document.createElement('div');
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
           
           // Formatar número do cartão para mostrar parcialmente
           const numeroCartaoFormatado = forma.numero_cartao.replace(/(\d{4})(?=\d)/g, "****-");
-
           div.innerHTML = `
             <button class="btn-remover" data-id="${forma.id}">REMOVER</button>
             <div class="card-header">Cartão de Pagamento</div>
@@ -92,8 +91,7 @@ document.getElementById("validadeCartao").addEventListener("input", function (e)
 
 // Cadastro de nova forma de pagamento
 document.getElementById("botaoCadastrarPagamento").addEventListener("click", async () => {
-  // Pegando os valores dos campos do formulário
-  const idUsuario = 1;  // Aqui, você pode capturar o ID do usuário de uma variável ou do localStorage, por exemplo
+
   const tipoPagamento = document.getElementById("tipoPagamento").value;
   const nomeNoCartao = document.getElementById("nomeNoCartao").value;
   const numeroCartao = document.getElementById("numeroCartao").value;
