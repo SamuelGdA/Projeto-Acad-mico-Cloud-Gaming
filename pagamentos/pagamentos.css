@@ -38,7 +38,6 @@ header {
 
 .logo-e-nome img {
     display: flex;
-    filter: grayscale(100%) brightness(0) invert(1);
     width: 50px;
 }
 
