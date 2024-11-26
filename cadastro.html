@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
   <!-- Importando o arquivo CSS separado -->
   <link rel="stylesheet" href="cadastro/cadastro.css">
 </head>
+
 <body>
   <!-- Formas geométricas de fundo -->
   <div class="shapes">
@@ -54,7 +56,8 @@
       </div>
       <h2 class="subtitle">CADASTRO</h2>
       <input type="text" id="nome" name="nome" class="input" placeholder="Digite seu nome" required>
-      <input type="text" id="identificador" name="identificador" class="input" placeholder="Escolha um nome de usuário" required>
+      <input type="text" id="identificador" name="identificador" class="input" placeholder="Escolha um nome de usuário"
+        required>
       <input type="email" id="email" name="email" class="input" placeholder="Digite seu email" required>
       <input type="text" id="dataNascimento" name="dataNascimento" class="input" placeholder="AAAA/MM/DD" required>
       <input type="password" id="senha" name="senha" class="input" placeholder="Digite sua senha" required>
@@ -66,7 +69,7 @@
       </p>
     </form>
   </div>
-  
+
   <!-- Pop-up de erro -->
   <div id="popup" class="popup">
     <div class="popup-content">
@@ -75,8 +78,7 @@
       <p id="popupMessage"></p>
     </div>
   </div>
-  
+
   <!-- Importando o arquivo JavaScript externo -->
   <script src="https://cdn.jsdelivr.net/npm/cleave.js@1/dist/cleave.min.js"></script>
   <script src="cadastro/cadastro.js"></script>
-  

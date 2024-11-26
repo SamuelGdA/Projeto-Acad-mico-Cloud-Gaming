@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="tela-perfil/tela-perfil.css">
 </head>
+
 <body>
 
     <div class="bloco-msg-topo" style="display: none;">
@@ -33,11 +35,12 @@
         <div class="modal-foto" style="display: none;">
             <div class="opcoes-fotos">
                 <button><input id="upload-foto" type="file"><i class="bi bi-upload"></i></button>
-            
+
             </div>
             <div class="container-foto-atual">
                 <div>
-                    <img id="foto-atual" src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
+                    <img id="foto-atual"
+                        src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
                     <span>Minha foto</span>
                 </div>
                 <div>
@@ -53,13 +56,54 @@
     <header>
 
         <div class="logo-e-nome">
-            <i><img src="img/icones-menu/logopirata.png" alt=""></i>
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Xbox">
+            </a>
             <span>PASSE PIRATA</span>
         </div>
 
         <a class="logx" href="Log out">Log out</a>
 
     </header>
+
+    <nav class="menu-lateral">
+        <ul>
+            <hr>
+            <li class="menu-item">
+                <a href="tela-perfil.html">
+                    <span class="menu-icon"><i class="bi bi-person-circle"></i></span>
+                    <span class="txt-link">Meu Perfil</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="dispositivos.html">
+                    <span class="menu-icon"><i class="bi bi-controller"></i></span>
+                    <span class="txt-link">Dispositivos</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="amigos.html">
+                    <span class="menu-icon"><i class="bi bi-people-fill"></i></span>
+                    <span class="txt-link">Amigos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="planos.html">
+                    <span class="menu-icon"><i class="bi bi-gem"></i></span>
+                    <span class="txt-link">Planos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="pagamentos.html">
+                    <span class="menu-icon"><i class="bi bi-piggy-bank"></i></span>
+                    <span class="txt-link">Meus Pagamentos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <article class="conteudo" style="display: flex;">
 
@@ -80,7 +124,7 @@
                     <span class="nome-usuario"></span>
                     <span class="username-usuario"></span>
                 </div>
-                
+
                 <span class="plano"></span>
             </div>
 
@@ -126,7 +170,7 @@
                         <button class="btn-deletar-conta">Apagar minha conta</button>
                     </div>
                 </div>
-                    
+
                 <div class="editar-dados" style="display: none">
                     <label for="name">Nome do usuário</label>
                     <input type="text" class="input-edicao" id="name" name="name">
@@ -145,7 +189,7 @@
                         <button class="btn-cancelar">Cancelar</button>
                     </div>
 
-                    
+
                 </div>
 
                 <div class="editar-senha" style="display: none">
@@ -167,7 +211,7 @@
                     </div>
                 </div>
             </section>
-            
+
         </section>
 
         <aside class="container-amigos">
@@ -181,52 +225,47 @@
         </aside>
 
     </article>
-    
     <nav class="menu-lateral">
-
         <ul>
-
             <li class="menu-item">
-                <a href="#">
+                <a href="tela-perfil.html">
                     <span class="menu-icon"><img src="../img/icones-menu/chapeu-de-pirata.png" alt=""></span>
                     <span class="txt-link">Meu Perfil</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="#">
+                <a href="amigos.html">
                     <span class="menu-icon"><img src="../img/icones-menu/bandeira-pirata.png" alt=""></span>
                     <span class="txt-link">Amigos</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="#">
+                <a href="planos.html">
                     <span class="menu-icon"><img src="../img/icones-menu/mapa-do-tesouro.png" alt=""></i></span>
                     <span class="txt-link">Planos</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="#">
+                <a href="dispositivos.html">
                     <span class="menu-icon"><img src="../img/icones-menu/leme.png" alt=""></span>
                     <span class="txt-link">Dispositivos</span>
                 </a>
             </li>
             <hr>
             <li class="menu-item">
-                <a href="#">
+                <a href="meus-pagamentos.html">
                     <span class="menu-icon"><img src="../img/icones-menu/bau.png" alt=""></span>
                     <span class="txt-link">Meus Pagamentos</span>
                 </a>
-            </li>
-                
+            </li>  
         </ul>
-
     </nav>
-
     <!-- <script src="idLogin.js"></script> -->
     <script src="tela-perfil/tperfil-personalizacao.js"></script>
     <script src="tela-perfil/tela-perfil.js"></script>
 </body>
+
 </html>
