@@ -17,7 +17,6 @@ body {
     margin-bottom: 60px;
 }
 
-/* Header */
 header {
     background-color: #352315;
     height: 8vh;
@@ -39,8 +38,8 @@ header {
 
 .logo-e-nome img {
     display: flex;
-    filter: grayscale(100%) brightness(0) invert(1); /* Aplica filtro à imagem do logo */
-    width: 50px; /* Largura fixa da imagem do logo */
+    filter: grayscale(100%) brightness(0) invert(1);
+    width: 50px;
 }
 
 .logo-e-nome span {
@@ -56,7 +55,6 @@ header {
     margin-right: 20px;
 }
 
-/* Menu Lateral */
 .menu-lateral {
     background-color: #3f301d;
     width: 3.7em;
@@ -116,20 +114,18 @@ ul li.menu-item a .menu-icon i {
     font-size: 1.3em;
 }
 
-/* Conteúdo Principal */
 .conteudo {
     min-height: 90vh;
     padding-bottom: 25px;
     position: absolute;
     width: calc(100% - 6em);
     margin-bottom: 2em;
-    top: 10vh; /* Ajuste a posição para baixo */
+    top: 10vh;
     left: 4.8em;
     display: flex;
     justify-content: space-between;
 }
 
-/* Pagamentos Container */
 .pagamentos-container {
     width: 100%;
     margin: auto;
@@ -147,8 +143,8 @@ ul li.menu-item a .menu-icon i {
 }
 
 .historico-pagamentos-container {
-    max-height: 400px; /* Altura máxima com rolagem */
-    overflow-y: auto; /* Adiciona rolagem vertical */
+    max-height: 400px;
+    overflow-y: auto;
     margin-bottom: 20px;
 }
 
