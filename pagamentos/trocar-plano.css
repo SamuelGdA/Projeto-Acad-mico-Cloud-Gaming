@@ -39,8 +39,7 @@ header {
 
 .logo-e-nome img {
     display: flex;
-    filter: grayscale(100%) brightness(0) invert(1); /* Aplica filtro à imagem do logo */
-    width: 50px; /* Largura fixa da imagem do logo */
+    width: 50px;
 }
 
 .logo-e-nome span {
