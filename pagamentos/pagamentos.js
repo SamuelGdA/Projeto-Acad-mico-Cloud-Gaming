@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const userId = 1;
-    const apiUrl = `http://localhost:3000/pagamentos/${userId}`;
+    const apiUrl = `http://localhost:3000/pagamentos/${idUsuario}`;
     const tabelaBody = document.getElementById("historicoPagamentosBody");
 
     try {

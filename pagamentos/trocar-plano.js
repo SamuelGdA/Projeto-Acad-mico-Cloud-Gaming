@@ -1,3 +1,5 @@
+
+
 // Função para fechar o modal
 const fecharModal = () => {
     const modal = document.getElementById('modal');
@@ -5,9 +7,9 @@ const fecharModal = () => {
 };
 
 // Função para buscar o plano atual do usuário
-const fetchPlanoAtual = async (usuarioId) => {
+const fetchPlanoAtual = async () => {
     try {
-        const usuarioResponse = await fetch(`http://localhost:3000/usuarios/${usuarioId}`);
+        const usuarioResponse = await fetch(`http://localhost:3000/usuarios/${idUsuario}`);
         const usuario = await usuarioResponse.json();
 
         // Verifica se o usuário possui um plano associado
@@ -64,8 +66,8 @@ document.getElementById('modal').addEventListener('click', (event) => {
 
 // Função para renderizar os planos no DOM
 const renderPlanos = async () => {
-    const usuarioId = 1;
-    const planoAtual = await fetchPlanoAtual(usuarioId);
+    const idUsuario = 1;
+    const planoAtual = await fetchPlanoAtual(idUsuario);
 
     // Verifica se o plano atual foi carregado com sucesso
     if (planoAtual) {
@@ -101,7 +103,6 @@ const renderPlanos = async () => {
 // Função para processar a compra do plano
 const comprarPlano = async (planoId) => {
     console.log("Plano ID selecionado:", planoId);
-    const usuarioId = 1;
     const formaPagamentoId = document.querySelector('.cartao-mini.selecionado')?.dataset.id;
 
     // Verifica se uma forma de pagamento foi selecionada
@@ -111,7 +112,7 @@ const comprarPlano = async (planoId) => {
     }
 
     const pagamentoData = {
-        id_usuario: usuarioId,
+        id_usuario: idUsuario,
         id_forma_pagamento: formaPagamentoId,
         id_plano: planoId,
     };
@@ -143,12 +144,11 @@ const comprarPlano = async (planoId) => {
 };
 
 document.addEventListener("DOMContentLoaded", async function () {
-    const usuarioId = 1;
 
     // Função para buscar os cartões salvos do usuário
-    const fetchCartoesSalvos = async (usuarioId) => {
+    const fetchCartoesSalvos = async () => {
         try {
-            const pagamentosResponse = await fetch(`http://localhost:3000/pagamentos/getformas/${usuarioId}`);
+            const pagamentosResponse = await fetch(`http://localhost:3000/pagamentos/getformas/${idUsuario}`);
             const textResponse = await pagamentosResponse.text();
             console.log(textResponse);
             const pagamentos = JSON.parse(textResponse);
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Função para renderizar os cartões salvos ou mensagem de não ter cartões
     const renderCartoesSalvos = async () => {
-        const pagamentosSalvos = await fetchCartoesSalvos(usuarioId);
+        const pagamentosSalvos = await fetchCartoesSalvos(idUsuario);
         const salvosContainer = document.querySelector('#salvos');
 
         // Verifica se existem cartões salvos
