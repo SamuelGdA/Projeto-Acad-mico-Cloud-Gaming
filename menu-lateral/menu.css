@@ -1,8 +1,21 @@
-/* Esse arquivo só precisa ser conectado no head com 
-<link rel="stylesheet" href="./menu-lateral/menu.css">
-também o
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-*/ 
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Kanit:wght@300;400&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100%;
+    background: linear-gradient(#0077b6, #03045e);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 60px;
+}
 
 /* Header */
 
@@ -25,12 +38,13 @@ header {
     color: white;
 }
 
-.logo-e-nome i img {
-    width: 1em;
+.logo-e-nome img {
+    display:  flex;
+    width: 50px;
 }
 
 .logo-e-nome span {
-    font-size: 2.5em;
+    font-size: 1.7em;
     font-family: "Pirata One", system-ui;
 }
 
@@ -51,6 +65,7 @@ header {
     padding: 0 0 40px 5px;
     position: fixed;
     bottom: 0;
+    box-shadow: 4px 0 0 #0077b6;
 }
 
 hr {
@@ -60,6 +75,10 @@ hr {
 ul {
     height: 100%;
     list-style-type: none;
+}
+
+.menu-item a span img {
+    width: 1.5em;
 }
 
 ul li.menu-item {

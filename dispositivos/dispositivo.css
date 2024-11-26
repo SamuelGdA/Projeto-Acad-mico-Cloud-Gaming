@@ -1,34 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Kanit:wght@300;400&family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
- 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
- 
-body {
-    min-height: 100%;
-    max-width: 100%;
-    background: linear-gradient(#0077b6, #03045e);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin-bottom: 60px;
-}
- 
-
- 
-header {
-    background-color: #352315;
-    height: 8vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-}
 
 .conteudo {
     min-height: 90vh;
@@ -41,26 +12,56 @@ header {
     display: flex;
     justify-content: space-between;
 }
- 
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Kanit:wght@300;400&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100%;
+    background: linear-gradient(#0077b6, #03045e);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 60px;
+}
+
+/* Header */
+
+header {
+    background-color: #352315;
+    height: 8vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
 .logo-e-nome {
+    padding-left: 15px;
     display: flex;
     align-items: center;
     gap: 1em;
     color: white;
-    padding-left: 15px;
 }
- 
+
 .logo-e-nome img {
     display:  flex;
-    filter: grayscale(100%) brightness(0) invert(1);
     width: 50px;
 }
- 
+
 .logo-e-nome span {
     font-size: 1.7em;
     font-family: "Pirata One", system-ui;
 }
- 
+
 .logx {
     font-family: "Kanit", sans-serif;
     font-size: 1.2em;
@@ -68,6 +69,8 @@ header {
     margin-left: auto;
     margin-right: 20px;
 }
+
+/* Menu Lateral */
 
 .menu-lateral {
     background-color: #3f301d;
@@ -78,39 +81,43 @@ header {
     bottom: 0;
     box-shadow: 4px 0 0 #0077b6;
 }
- 
+
 hr {
     opacity: 50%;
 }
- 
+
 ul {
     height: 100%;
     list-style-type: none;
 }
- 
+
+.menu-item a span img {
+    width: 1.5em;
+}
+
 ul li.menu-item {
     transition: .2s;
     width: 3.7em;
 }
- 
+
 ul li.menu-item:hover {
     background: rgb(0 118 182 / 90%);
     box-shadow: inset 0 2px 0px rgba(255, 255, 255, 0.688), inset -2px 0 0px rgba(255, 255, 255, 0.688), inset 0 -2px 0px rgba(255, 255, 255, 0.688);
     width: 16em;
 }
- 
- 
+
+
 .txt-link {
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     display: none;
 }
- 
+
 ul li.menu-item:hover .txt-link {
     display: block;
     white-space: nowrap;
 }
- 
+
 ul li.menu-item a {
     color: white;
     text-decoration: none;
@@ -120,14 +127,15 @@ ul li.menu-item a {
     gap: 26px;
     align-items: center;
 }
- 
+
 .menu-icon {
     padding: 5px;
 }
- 
+
 ul li.menu-item a .menu-icon i {
     font-size: 1.3em;
 }
+
 
 .dispositivos-container {
     width: 90%;
