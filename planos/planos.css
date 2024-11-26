@@ -16,10 +16,8 @@ body, html {
 }
 
 .pg-container .pg-logo img {
-    filter: grayscale(100%) brightness(0) invert(1);
     width: 55px;
     margin-right: 30px;
-    /* Removido margin-left: none; pois 'none' não é um valor válido */
 }
 
 /* Cabeçalho */
