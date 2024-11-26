@@ -38,8 +38,9 @@ header {
     color: white;
 }
 
-.logo-e-nome i {
-    font-size: 1.7em;
+.logo-e-nome img {
+    display:  flex;
+    width: 50px;
 }
 
 .logo-e-nome span {
