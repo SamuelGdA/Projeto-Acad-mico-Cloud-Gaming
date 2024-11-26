@@ -8,7 +8,6 @@
     <link rel="icon" href="img/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- Fontes e ícones -->
-    <!-- Incluindo as fontes Pirata One e Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="pagina-inicial/style.css">
     <link rel="stylesheet" href="menu-lateral/menu.css">
@@ -31,8 +30,7 @@
             <div class="search-container">
                 <input type="text" id="search-bar" placeholder="Pesquisar..." style="display: none;">
                 <a href="#" id="search-icon">
-                    <img src="img/pesquisar.png" alt="Pesquisar"
-                        style="width: 30px; height: auto;"> <!-- Ajusta o tamanho do ícone -->
+                    <img src="img/pesquisar.png" alt="Pesquisar" style="width: 30px; height: auto;">
                 </a>
             </div>
         </header>
@@ -76,7 +74,7 @@
             </ul>
         </nav>
 
-        <!-- Seção de boas vindas do site -->
+        <!-- Seção de boas-vindas do site -->
         <section class="hero">
             <div class="hero-content">
                 <h1>Comece nesse mundo de piratas🏴‍☠️</h1>
@@ -90,18 +88,71 @@
         <!-- Seção de jogos em destaque -->
         <section class="featured-games">
             <h2>Jogos com maior avaliação⭐</h2>
-            <img src="img/leme.png" alt="Leme de Barco" class="carrossel-leme" id="carrossel-leme">
 
-         <!-- Carrossel adaptado -->
-<div class="carousel">
-    <button class="nav prev">‹</button>
-    <div class="carousel-track-container">
-        <ul class="carousel-track">
-            <!-- Slides serão inseridos dinamicamente pelo JavaScript -->
-        </ul>
+            <!-- Carrossel com Leme acima -->
+            <div class="carousel-container">
+                 <!-- Leme acima do carrossel -->
+        <img src="img/leme.png" alt="Leme de Barco" class="carrossel-leme" id="carrossel-leme">
+
+        <!-- Carrossel -->
+        <div class="carousel">
+            <button class="nav prev">‹</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <!-- Slide 1 -->
+                    <li class="carousel-slide">
+                        <div class="game-card">
+                            <a href="link1.html"><img src="img/game1.jpg" alt="Jogo 1"></a>
+                            <div class="game-info">
+                                <h3>Jogo 1</h3>
+                                <p>Estúdio 1</p>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <a href="link2.html"><img src="img/game2.jpg" alt="Jogo 2"></a>
+                            <div class="game-info">
+                                <h3>Jogo 2</h3>
+                                <p>Estúdio 2</p>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <a href="link3.html"><img src="img/game3.jpg" alt="Jogo 3"></a>
+                            <div class="game-info">
+                                <h3>Jogo 3</h3>
+                                <p>Estúdio 3</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Slide 2 -->
+                    <li class="carousel-slide">
+                        <div class="game-card">
+                            <a href="link4.html"><img src="img/game4.jpg" alt="Jogo 4"></a>
+                            <div class="game-info">
+                                <h3>Jogo 4</h3>
+                                <p>Estúdio 4</p>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <a href="link5.html"><img src="img/game5.jpg" alt="Jogo 5"></a>
+                            <div class="game-info">
+                                <h3>Jogo 5</h3>
+                                <p>Estúdio 5</p>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <a href="link6.html"><img src="img/game6.jpg" alt="Jogo 6"></a>
+                            <div class="game-info">
+                                <h3>Jogo 6</h3>
+                                <p>Estúdio 6</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="nav next">›</button>
+        </div>
     </div>
-    <button class="nav next">›</button>
-</div>
+        </section>
 
             <!-- Gêneros -->
             <div class="generos">
