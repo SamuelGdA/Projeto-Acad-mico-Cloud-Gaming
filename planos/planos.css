@@ -19,7 +19,7 @@ body, html {
     filter: grayscale(100%) brightness(0) invert(1);
     width: 55px;
     margin-right: 30px;
-    margin-left: none;
+    /* Removido margin-left: none; pois 'none' não é um valor válido */
 }
 
 /* Cabeçalho */
@@ -76,7 +76,6 @@ body, html {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 20px;
     padding: 50px 0;
     background: linear-gradient(to bottom, #00aaff, #004477); /* Degradê azul */
@@ -174,20 +173,43 @@ body, html {
 .pg-container .pg-apresentacao {
     background-color: #2b1200; /* Fundo marrom original */
     padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
 }
 
-.pg-container .pg-apresentacao-item1, .pg-apresentacao-item2, .pg-apresentacao-item3 {
+.pg-container .pg-apresentacao-item {
     margin-bottom: 50px;
     text-align: center;
+    max-width: 800px; /* Limita a largura para melhor legibilidade */
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    /* Fundo com degradê de azul estilo mar */
+    background: linear-gradient(to right, #1e3c72, #2a5298); /* Degradê azul */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.pg-container h2 {
+/* Classes Específicas para Cada Apresentação com Diferentes Degradês */
+.pg-container .pg-apresentacao-item-tripulante {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Degradê azul claro */
+}
+
+.pg-container .pg-apresentacao-item-imediato {
+    background: linear-gradient(to right, #1e3c72, #2a5298); /* Degradê azul escuro */
+}
+
+.pg-container .pg-apresentacao-item-capitao {
+    background: linear-gradient(to right, #00b4db, #0083b0); /* Degradê azul vibrante */
+}
+
+.pg-container .pg-apresentacao-item h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-family: 'Pirata One', cursive; /* Fonte Pirata */
 }
 
-.pg-container p {
+.pg-container .pg-apresentacao-item p {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
